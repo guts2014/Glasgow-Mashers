@@ -1,0 +1,66 @@
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2014-10-10 23:41:06 +0100
+Processing by StaticPagesController#welcome_page as HTML
+  Rendered static_pages/welcome_page.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 359ms (Views: 352.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2014-10-10 23:41:22 +0100
+Processing by StaticPagesController#welcome_page as HTML
+  Rendered static_pages/welcome_page.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 17ms (Views: 10.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2014-10-10 23:43:12 +0100
+Processing by StaticPagesController#welcome_page as HTML
+  Rendered static_pages/welcome_page.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 17ms (Views: 10.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2014-10-10 23:43:34 +0100
+Processing by StaticPagesController#welcome_page as HTML
+  Rendered static_pages/welcome_page.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 17ms (Views: 10.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2014-10-10 23:43:43 +0100
+Processing by StaticPagesController#welcome_page as HTML
+  Rendered static_pages/welcome_page.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 17ms (Views: 11.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2014-10-10 23:44:32 +0100
+Processing by StaticPagesController#welcome_page as HTML
+  Rendered static_pages/welcome_page.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 17ms (Views: 10.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2014-10-10 23:45:14 +0100
+Processing by StaticPagesController#welcome_page as HTML
+  Rendered static_pages/welcome_page.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 18ms (Views: 10.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2014-10-10 23:45:34 +0100
+Processing by StaticPagesController#welcome_page as HTML
+  Rendered static_pages/welcome_page.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 19ms (Views: 11.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2014-10-10 23:45:36 +0100
+Processing by StaticPagesController#welcome_page as HTML
+  Rendered static_pages/welcome_page.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 17ms (Views: 10.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
