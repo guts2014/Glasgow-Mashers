@@ -9,7 +9,7 @@ RSpec.describe Customer, :type => :model do
   	it "should have a name" do
   		FactoryGirl.build(:customer, :name => nil).should_not be_valid
   	end
-
+9
   	it "should have a trait" do
   		FactoryGirl.build(:customer, :trait => nil).should_not be_valid
   	end

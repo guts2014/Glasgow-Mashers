@@ -20,5 +20,8 @@ class Staff < ActiveRecord::Base
 		end
 	end
 
+	def self.pagination(page_number, number_records)
+		all.offset(page_number * number_records).limit(number_records)
+	end
 
 end
