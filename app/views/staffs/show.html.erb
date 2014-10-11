@@ -1,0 +1,53 @@
+<div class="col-md-8 central-panel">
+	<!-- STAFF -->
+	<div class="row">
+		<div class="col-md-offset-1 logged-margin-top">
+
+			<h1><%= link_to raw("&lArr; Staff"), root_path %></h1>
+			<small>page number: </small>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			<div class="well show">
+				<table>
+					<tr>
+						<td>Name:</td>
+						<td> <%= @staff.name %></td>
+					</tr>
+					<tr>
+						<td>Happiness:</td>
+						<td><%= @staff.happiness %></td>
+					</tr>
+					<tr>
+						<td>Salary:</td>
+						<td><%= @staff.salary %></td>
+					</tr>
+					<tr>
+						<td>Performance: </td>
+						<td><%= @staff.performance %></td>
+					</tr>
+				</table>	
+			</div> <!-- END OF WELL SHOW-->
+
+			<div class="well show table">
+				<h1>Handles these customers:</h1>
+				<table>
+					<tr>
+						<th>Name</th>
+						<th>Affluence</th>
+					</tr>
+					<% @staff.customers.each do |customer| %>
+					<tr>
+						<td><%= customer.name %></td>
+						<td><%= customer.affluence %></td>
+					</tr>
+
+					<% end %>
+				</table>
+			</div> <!-- end of second well show -->
+
+			
+		</div>	
+	</div>
+</div>

@@ -11,12 +11,15 @@ $side-panel-colors: #666;
 }
 
 .staff-styling {	
+	a {
+		text-decoration: none;
+	}
 	.well {
 		background-color: #222; 
 		color:            #eee;
 		border-color: #555;
 		cursor: pointer;
-		
+
 		&:hover {
 			background-color: #444; 
 			border-color: #666;
@@ -43,5 +46,45 @@ $side-panel-colors: #666;
 		text-decoration: underline ;
 		font-weight: bold; 
 	}
+
+	a {
+		color: #eee;
+		text-decoration: underline ;
+		font-weight: bold; 
+		
+		&:hover {
+			color: #999;
+		}
+	}
+}
+
+.show {
+	font-size: 30px; 
+	td {
+		padding: 10px; 
+	}
+	.right {
+		float: right;
+	}
+
+}
+
+.table {
+	td, th {
+		border: 3px solid #444;
+		padding: 7px;
+		text-align: center; 
+	}
+
+	tr {
+		&:nth-child(odd) {
+			background-color: #A7D9A8; 
+		}
+
+		&:nth-child(even) {
+			background-color: #ddd; 
+		}
+	}
+
 }
 

@@ -1,0 +1,35 @@
+<div class="col-md-8 central-panel">
+	<!-- STAFF -->
+	<div class="row">
+		<div class="col-md-offset-1 logged-margin-top">
+
+			<h1><%= link_to raw("&lArr; Customers"), root_path %></h1>
+			<small>page number: </small>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+			<div class="well show">
+				<table>
+					<tr>
+						<td>Customer name:</td>
+						<td> <%= @customer.name %></td>
+					</tr>
+					<tr>
+						<td>Customer affluence:</td>
+						<td><%= @customer.affluence %></td>
+					</tr>
+					<tr>
+						<td>Customer handled by:</td>
+						<td><%= link_to @customer.staff.name, staff_path(@customer.staff) %></td>
+					</tr>
+				    <tr>
+				    	<td></td>
+				    	<td><%= link_to "Assign new staff", "#" %></td>
+				    </tr>
+				</table>
+						
+			</div>
+		</div>	
+	</div>
+</div>
