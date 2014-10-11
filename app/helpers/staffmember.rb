@@ -1,6 +1,9 @@
 require ("./client.rb")
 require ("faker")
 
+BASE_PERFORMANCE_LOWER = 5
+BASE_PERFORMANCE_UPPER = 10
+
 class StaffMember
     attr_reader :name, :trait
 
@@ -18,7 +21,7 @@ class StaffMember
         # Actual code
         @name = Faker::Name.name
         @trait = traits[rand(traits.length)]
-        @basePerformance = rand(10) + 5;
+        @basePerformance = [*BASE_PERFORMANCE_LOWER..BASE_PERFORMANCE_UPPER].sample
         @clients = []
     end
 

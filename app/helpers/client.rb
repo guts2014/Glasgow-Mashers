@@ -1,3 +1,6 @@
+AFFLUENCE_LOWER = 500
+AFFLUENCE_UPPER = 1000
+
 class Client
     attr_reader :name, :trait, :affluence
 
@@ -15,7 +18,7 @@ class Client
         # Actual code
         @name = Faker::Name.name
         @trait = traits[rand(traits.length)]
-        @affluence = rand(500) + 500;
+        @affluence = [*AFFLUENCE_LOWER..AFFLUENCE_UPPER].sample
     end
 
 end    
