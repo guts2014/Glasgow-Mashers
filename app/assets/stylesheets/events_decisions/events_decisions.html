@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Jumbotron Template for Bootstrap</title>
+
+    <link href="bootstrap.min.css" rel="stylesheet">
+
+    <link href="jumbotron.css" rel="stylesheet">
+	<link href = "maincss.css" rel = "stylesheet">
+	<script src="jquery.js" type="text/javascript"></script>
+	<script src="jquery.hashchange.js" type="text/javascript"></script>
+	<script src="jquery.easytabs.js" type="text/javascript"></script>
+	<script src="mainscript.js" type="text/javascript"></script>
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand navbar-color" href="#">Glasgow Mashers</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <form class="navbar-form navbar-right" role="form">
+            
+			<button type="submit" class="btn btn-success">Sign up</button>
+            <button type="submit" class="btn btn-success">Sign in</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+   
+
+<div class="margin-top">
+	<div class="row">
+        <div class="col-md-3" id="left">
+			<div class="left_evet" id="onel" onclick="oneF()"><span>Event 1</span></div>
+			
+			<div class="left_evet" id="twol" onclick="twoF()"><span>Event 2</span></div>
+		
+			<div class="left_evet" id="threel" onclick="threeF()"><span>Event 3</span></div>
+		
+			<div class="left_evet" id="fourl" onclick="fourF()"><span>Event 4</span></div>
+		
+			<div class="left_evet" id="fivel" onclick="fiveF()"><span>Event 5</span></div>
+			
+			<div class="left_evet" id="sixl" onclick="fiveF()"><span>Event 6</span></div>
+			
+			<div class="left_evet" id="sevenl" onclick="fiveF()"><span>Event 7</span></div>
+			
+			<div class="left_evet" id="eight1" onclick="fiveF()"><span>Event 8</span></div>
+			
+			
+			
+			<div id="tab-full-container" class='tab-container'>
+				<div class='etabs'>
+					<span class='tab' id="tab-1"><a href="#tabs1_text"><span id="tab1_text">Tab1</span></a></span>
+					<span class='tab' id="tab-2"><a href="#tabs2_text"><span id="tab2_text">Tab2</span></a></span>
+					<span class='tab' id="tab-3"><a href="#tabs3_text"><span id="tab3_text">Tab3</span></a></span>
+					<span class='tab' id="tab-4"><a href="#tabs4_text"><span id="tab4_text">Tab4</span></a></span>
+					</div>
+			<div class='panel-container'>
+				<div id="tabs1_text">
+					<span id="first_span">THIS IS FIRST TAB</span>
+					<!-- content -->
+				</div>
+				<div id="tabs2_text">
+					<span id="first_span">THIS IS SECOND TAB</span>
+					<!-- content -->
+				</div>
+				<div id="tabs3_text">
+					<span id="first_span">THIS IS THIRD TAB</span>
+					<!-- content -->
+				</div>
+				<div id="tabs4_text">
+					<span id="first_span">THIS IS FOURTH TAB</span>
+					<!-- content -->
+				</div>
+			</div>
+					</div>
+					
+					<script>
+			$("#tab-full-container").easytabs({
+					animate: true,
+			animationSpeed: 1000,
+			defaultTab: "span#tab-2",
+				panelActiveClass: "active-content-div",
+				tabActiveClass: "selected-tab",
+				tabs: "> div > span",
+				updateHash: false,
+			cycle: 2000
+				});
+			</script>
+		
+		</div>
+		<div class="col-md-6">6666</div>
+		<div class="col-md-3" id="right">
+			
+			<div class="evet" id="one" onclick="oneF()"><span>Event 1</span></div>
+			
+			<div class="evet" id="two" onclick="twoF()"><span>Event 2</span></div>
+		
+			<div class="evet" id="three" onclick="threeF()"><span>Event 3</span></div>
+		
+			<div class="evet" id="four" onclick="fourF()"><span>Event 4</span></div>
+		
+			<div class="evet" id="five" onclick="fiveF()"><span>Event 5</span></div>
+			
+		</div>
+	</div>
+</div>
+	
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
