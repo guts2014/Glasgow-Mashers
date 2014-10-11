@@ -2,7 +2,7 @@ require("./person.rb")
 require("./trait_initializer.rb")
 
 AFFLUENCE_LOWER = 500
-AFFLUENCE_UPPER = 1000
+AFFLUENCE_UPPER = 2000
 
 class CustomerDescriptor < Person
     attr_reader :affluence, :serviced_by
@@ -19,7 +19,8 @@ class CustomerDescriptor < Person
     end
 
     def leave?
-        (@affluence / 1000) > @serviced_by.performance + [*-50..50].sample
+        perf = @serviced_by.performance
+        (@affluence / 150) > perf
     end
 
 end    

@@ -20,13 +20,14 @@ class StaffDescriptor < Person
         @basePerformance = [*BASE_PERFORMANCE_LOWER..BASE_PERFORMANCE_UPPER].sample
         @happiness = BASE_HAPPINESS
         # Salary is dependent on trait's modifier + random factor
-        @salary = (@trait.modifier.abs + rand(10) + 1) * 5 * 30;
+        @salary = (@trait.modifier.abs + rand(10) + 1) * 5 * 20;
         @modifiers = []
         @customers = []
     end
 
     def addCustomer customer
         @customers.push(customer)
+        customer.serviced_by = self
     end
 
     def changeSalary new_salary
