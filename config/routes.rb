@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     sign_up: 'sign_up' 
   }
 
+  resources :staffs
+
   authenticated :user do 
     root 'logged_in#user_log_in', as: :authenticated_root, via: :get
   end
@@ -13,5 +15,7 @@ Rails.application.routes.draw do
   unauthenticated :user do
     root 'static_pages#welcome_page'
   end
+
+  match "/staff/:page", to: 'staffs#next_page', via: [:get]
 
 end

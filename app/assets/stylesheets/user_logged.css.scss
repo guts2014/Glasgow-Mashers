@@ -9,3 +9,39 @@ $side-panel-colors: #666;
 	background-color: $side-panel-colors; 
 	height: 1000px; 
 }
+
+.staff-styling {	
+	.well {
+		background-color: #222; 
+		color:            #eee;
+		border-color: #555;
+		cursor: pointer;
+		
+		&:hover {
+			background-color: #444; 
+			border-color: #666;
+			
+		} 
+	}
+}
+
+.arrow {
+	margin-top: 5px;; 
+	color: #999;
+	font-size: 80px;
+	padding-left: 20px;  
+	&:hover {
+		color: #fff;
+		cursor: pointer;
+	}  
+}
+
+.logged-margin-top {
+	margin-top: 30px;		
+	h1 {
+		color: #eee;
+		text-decoration: underline ;
+		font-weight: bold; 
+	}
+}
+
