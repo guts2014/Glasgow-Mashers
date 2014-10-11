@@ -1,5 +1,5 @@
 require ("./person.rb")
-require ("./client.rb")
+require ("./customer_descriptor.rb")
 require ("./trait_initializer.rb")
 require ("faker")
 
@@ -8,7 +8,7 @@ BASE_PERFORMANCE_UPPER = 10
 
 BASE_HAPPINESS = 70
 
-class StaffMember < Person
+class StaffDescriptor < Person
     attr_reader :happiness, :salary
 
     def initialize
@@ -22,11 +22,11 @@ class StaffMember < Person
         # Salary is dependent on trait's modifier + random factor
         @salary = (@trait.modifier.abs + rand(10) + 1) * 5 * 30;
         @modifiers = []
-        @clients = []
+        @customers = []
     end
 
-    def addClient client
-        @clients.push(client)
+    def addCustomer customer
+        @customers.push(customer)
     end
 
     def changeSalary new_salary
@@ -46,7 +46,7 @@ class StaffMember < Person
     def performance
         p = @basePerformance + @happiness / 15
         p += @trait.modifier;
-        @clients.each do |c|
+        @customers.each do |c|
            if @trait.modifier < 0 
             p -= 2 * @trait.modifier if c.trait.likes? @trait
             p += 2 * @trait.modifier if c.trait.hates? @trait
@@ -60,6 +60,6 @@ class StaffMember < Person
         p
     end
 
-    alias :add_client :addClient
+    alias :add_customer :addCustomer
 
 end
