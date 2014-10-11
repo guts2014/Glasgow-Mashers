@@ -1,12 +1,11 @@
 require ("./client.rb")
+require ("faker")
 
 class StaffMember
-    attr_reader :firstName, :lastName, :trait
+    attr_reader :name, :trait
 
     def initialize
         # This will all be pulled from a DB
-        firstNames = ["Peter", "John", "James"]
-        lastNames = ["Swanson", "Irons", "Green"]
         traitPerfectionist = Trait.new "Perfectionist", +5
         traitPerfectionist.likes! "Perfectionist"
         traitPerfectionist.hates! "Sloppy"
@@ -17,15 +16,10 @@ class StaffMember
         traits = [traitPerfectionist, traitSloppy, traitLazy]
 
         # Actual code
-        @firstName = firstNames[rand(firstNames.length)]
-        @lastName = lastNames[rand(lastNames.length)]
+        @name = Faker::Name.name
         @trait = traits[rand(traits.length)]
         @basePerformance = rand(10) + 5;
         @clients = []
-    end
-
-    def fullName
-        @firstName + " " +@lastName
     end
 
     def add_client client
@@ -48,5 +42,4 @@ class StaffMember
         p += rand(5) + -2;
     end
 
-    alias :name :fullName
 end
