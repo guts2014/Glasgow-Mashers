@@ -29,6 +29,7 @@ class StaffMember
         @clients.push(client)
     end
 
+    # Should be calculated once per day
     def performance
         p = @basePerformance
         p += @trait.modifier;
