@@ -29,6 +29,13 @@ class StaffMember < Person
         @clients.push(client)
     end
 
+    def changeSalary new_salary
+        @happiness += ((new_salary - salary) / 15)
+        @happiness += rand(new_salary / 50) if new_salary > salary
+        @happiness -= rand(new_salary / 50) if new_salary < salary
+        @salary = new_salary
+    end
+
     # Should be calculated once per day
     def evaluate 
         p = performance
