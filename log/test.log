@@ -64,3 +64,463 @@ Processing by StaticPagesController#welcome_page as HTML
   Rendered static_pages/welcome_page.html.erb within layouts/application (0.8ms)
 Completed 200 OK in 17ms (Views: 10.9ms | ActiveRecord: 0.0ms)
   [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (156.4ms)[0m  [1mCREATE TABLE "players" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (155.2ms)[0m  [1mCREATE UNIQUE INDEX "index_players_on_email" ON "players" ("email")[0m
+  [1m[35m (0.3ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_players_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_players_on_email' AND type='index'
+
+  [1m[36m (154.7ms)[0m  [1mCREATE UNIQUE INDEX "index_players_on_reset_password_token" ON "players" ("reset_password_token")[0m
+  [1m[35m (155.6ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (153.5ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (167.7ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (179.7ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (233.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (145.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20141010225801')[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2014-10-11 00:47:12 +0100
+Processing by StaticPagesController#welcome_page as HTML
+  Rendered static_pages/welcome_page.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+Completed 200 OK in 155ms (Views: 154.4ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2014-10-11 00:47:42 +0100
+Processing by StaticPagesController#welcome_page as HTML
+  Rendered static_pages/welcome_page.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_navigation.html.erb (0.6ms)
+Completed 200 OK in 51ms (Views: 50.2ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2014-10-11 00:48:11 +0100
+Processing by StaticPagesController#welcome_page as HTML
+  Rendered static_pages/welcome_page.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_navigation.html.erb (0.6ms)
+Completed 200 OK in 49ms (Views: 48.7ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2014-10-11 00:48:37 +0100
+Processing by StaticPagesController#welcome_page as HTML
+  Rendered static_pages/welcome_page.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_navigation.html.erb (0.6ms)
+Completed 200 OK in 15ms (Views: 14.5ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2014-10-11 00:49:08 +0100
+Processing by StaticPagesController#welcome_page as HTML
+  Rendered static_pages/welcome_page.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_navigation.html.erb (0.6ms)
+Completed 200 OK in 50ms (Views: 49.4ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2014-10-11 00:49:21 +0100
+Processing by StaticPagesController#welcome_page as HTML
+  Rendered static_pages/welcome_page.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_navigation.html.erb (0.6ms)
+Completed 200 OK in 53ms (Views: 52.2ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2014-10-11 00:49:29 +0100
+Processing by StaticPagesController#welcome_page as HTML
+  Rendered static_pages/welcome_page.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_navigation.html.erb (0.6ms)
+Completed 200 OK in 51ms (Views: 50.7ms | ActiveRecord: 0.0ms)
+Started GET "/sign_up" for 127.0.0.1 at 2014-10-11 00:49:29 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered /home/kris/.rvm/gems/ruby-2.0.0-p481@first_gem/gems/devise-3.3.0/app/views/devise/shared/_links.erb (1.1ms)
+  Rendered /home/kris/.rvm/gems/ruby-2.0.0-p481@first_gem/gems/devise-3.3.0/app/views/devise/registrations/new.html.erb within layouts/application (343.7ms)
+  Rendered layouts/_navigation.html.erb (0.2ms)
+Completed 200 OK in 348ms (Views: 346.1ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2014-10-11 00:49:49 +0100
+Processing by StaticPagesController#welcome_page as HTML
+  Rendered static_pages/welcome_page.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_navigation.html.erb (0.6ms)
+Completed 200 OK in 16ms (Views: 15.8ms | ActiveRecord: 0.0ms)
+Started GET "/sign_up" for 127.0.0.1 at 2014-10-11 00:49:49 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered /home/kris/.rvm/gems/ruby-2.0.0-p481@first_gem/gems/devise-3.3.0/app/views/devise/shared/_links.erb (1.2ms)
+  Rendered /home/kris/.rvm/gems/ruby-2.0.0-p481@first_gem/gems/devise-3.3.0/app/views/devise/registrations/new.html.erb within layouts/application (346.9ms)
+  Rendered layouts/_navigation.html.erb (0.2ms)
+Completed 200 OK in 352ms (Views: 349.7ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2014-10-11 00:49:59 +0100
+Processing by StaticPagesController#welcome_page as HTML
+  Rendered static_pages/welcome_page.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_navigation.html.erb (0.6ms)
+Completed 200 OK in 51ms (Views: 50.5ms | ActiveRecord: 0.0ms)
+Started GET "/sign_up" for 127.0.0.1 at 2014-10-11 00:49:59 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered /home/kris/.rvm/gems/ruby-2.0.0-p481@first_gem/gems/devise-3.3.0/app/views/devise/shared/_links.erb (1.1ms)
+  Rendered /home/kris/.rvm/gems/ruby-2.0.0-p481@first_gem/gems/devise-3.3.0/app/views/devise/registrations/new.html.erb within layouts/application (290.5ms)
+  Rendered layouts/_navigation.html.erb (0.2ms)
+Completed 200 OK in 295ms (Views: 293.1ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2014-10-11 00:50:07 +0100
+Processing by StaticPagesController#welcome_page as HTML
+  Rendered static_pages/welcome_page.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_navigation.html.erb (0.5ms)
+Completed 200 OK in 14ms (Views: 14.2ms | ActiveRecord: 0.0ms)
+Started GET "/sign_up" for 127.0.0.1 at 2014-10-11 00:50:07 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered /home/kris/.rvm/gems/ruby-2.0.0-p481@first_gem/gems/devise-3.3.0/app/views/devise/shared/_links.erb (1.0ms)
+  Rendered /home/kris/.rvm/gems/ruby-2.0.0-p481@first_gem/gems/devise-3.3.0/app/views/devise/registrations/new.html.erb within layouts/application (314.9ms)
+  Rendered layouts/_navigation.html.erb (0.2ms)
+Completed 200 OK in 319ms (Views: 317.3ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2014-10-11 00:50:39 +0100
+Processing by StaticPagesController#welcome_page as HTML
+  Rendered static_pages/welcome_page.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_navigation.html.erb (0.6ms)
+Completed 200 OK in 15ms (Views: 14.8ms | ActiveRecord: 0.0ms)
+Started GET "/sign_up" for 127.0.0.1 at 2014-10-11 00:50:39 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered /home/kris/.rvm/gems/ruby-2.0.0-p481@first_gem/gems/devise-3.3.0/app/views/devise/shared/_links.erb (1.1ms)
+  Rendered /home/kris/.rvm/gems/ruby-2.0.0-p481@first_gem/gems/devise-3.3.0/app/views/devise/registrations/new.html.erb within layouts/application (325.1ms)
+  Rendered layouts/_navigation.html.erb (0.2ms)
+Completed 200 OK in 329ms (Views: 327.6ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2014-10-11 00:51:06 +0100
+Processing by StaticPagesController#welcome_page as HTML
+  Rendered static_pages/welcome_page.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_navigation.html.erb (0.6ms)
+Completed 200 OK in 17ms (Views: 16.6ms | ActiveRecord: 0.0ms)
+Started GET "/sign_up" for 127.0.0.1 at 2014-10-11 00:51:06 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered /home/kris/.rvm/gems/ruby-2.0.0-p481@first_gem/gems/devise-3.3.0/app/views/devise/shared/_links.erb (1.0ms)
+  Rendered /home/kris/.rvm/gems/ruby-2.0.0-p481@first_gem/gems/devise-3.3.0/app/views/devise/registrations/new.html.erb within layouts/application (329.4ms)
+  Rendered layouts/_navigation.html.erb (0.1ms)
+Completed 200 OK in 334ms (Views: 331.8ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2014-10-11 00:51:20 +0100
+Processing by StaticPagesController#welcome_page as HTML
+  Rendered static_pages/welcome_page.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_navigation.html.erb (0.5ms)
+Completed 200 OK in 14ms (Views: 14.1ms | ActiveRecord: 0.0ms)
+Started GET "/sign_up" for 127.0.0.1 at 2014-10-11 00:51:20 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered /home/kris/.rvm/gems/ruby-2.0.0-p481@first_gem/gems/devise-3.3.0/app/views/devise/shared/_links.erb (1.1ms)
+  Rendered /home/kris/.rvm/gems/ruby-2.0.0-p481@first_gem/gems/devise-3.3.0/app/views/devise/registrations/new.html.erb within layouts/application (314.1ms)
+  Rendered layouts/_navigation.html.erb (0.2ms)
+Completed 200 OK in 318ms (Views: 316.5ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2014-10-11 00:51:31 +0100
+Processing by StaticPagesController#welcome_page as HTML
+  Rendered static_pages/welcome_page.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_navigation.html.erb (0.6ms)
+Completed 200 OK in 15ms (Views: 14.3ms | ActiveRecord: 0.0ms)
+Started GET "/sign_up" for 127.0.0.1 at 2014-10-11 00:51:31 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered /home/kris/.rvm/gems/ruby-2.0.0-p481@first_gem/gems/devise-3.3.0/app/views/devise/shared/_links.erb (1.0ms)
+  Rendered /home/kris/.rvm/gems/ruby-2.0.0-p481@first_gem/gems/devise-3.3.0/app/views/devise/registrations/new.html.erb within layouts/application (316.5ms)
+  Rendered layouts/_navigation.html.erb (0.2ms)
+Completed 200 OK in 321ms (Views: 318.9ms | ActiveRecord: 0.3ms)
+Started POST "/" for 127.0.0.1 at 2014-10-11 00:51:31 +0100
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"mail@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'mail@example.com' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-10 23:51:31.514780"], ["email", "mail@example.com"], ["encrypted_password", "$2a$04$1Dr.8FTjJmv4bw7ZrY418.5t2TIMI7xeFqaJxYJ19DGCKMDO1B/KC"], ["updated_at", "2014-10-10 23:51:31.514780"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_at" = ?, "last_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["current_sign_in_at", "2014-10-10 23:51:31.517974"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_at", "2014-10-10 23:51:31.517974"], ["last_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2014-10-10 23:51:31.518932"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 115ms (ActiveRecord: 0.8ms)
+Started GET "/" for 127.0.0.1 at 2014-10-11 00:51:31 +0100
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+Processing by LoggedInController#user_log_in as HTML
+  Rendered logged_in/user_log_in.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_navigation.html.erb (0.2ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2014-10-11 00:51:42 +0100
+Processing by StaticPagesController#welcome_page as HTML
+  Rendered static_pages/welcome_page.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_navigation.html.erb (0.6ms)
+Completed 200 OK in 49ms (Views: 48.4ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2014-10-11 00:51:51 +0100
+Processing by StaticPagesController#welcome_page as HTML
+  Rendered static_pages/welcome_page.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_navigation.html.erb (0.6ms)
+Completed 200 OK in 15ms (Views: 14.7ms | ActiveRecord: 0.0ms)
+Started GET "/sign_up" for 127.0.0.1 at 2014-10-11 00:51:51 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered /home/kris/.rvm/gems/ruby-2.0.0-p481@first_gem/gems/devise-3.3.0/app/views/devise/shared/_links.erb (1.1ms)
+  Rendered /home/kris/.rvm/gems/ruby-2.0.0-p481@first_gem/gems/devise-3.3.0/app/views/devise/registrations/new.html.erb within layouts/application (309.5ms)
+  Rendered layouts/_navigation.html.erb (0.2ms)
+Completed 200 OK in 314ms (Views: 311.9ms | ActiveRecord: 0.3ms)
+Started POST "/" for 127.0.0.1 at 2014-10-11 00:51:51 +0100
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"mail@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'mail@example.com' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-10 23:51:51.429530"], ["email", "mail@example.com"], ["encrypted_password", "$2a$04$UJldv/h/9QaqlGghemxqWOTuMF7TlYEXTMNkKclJwf7nJLDDmmqPG"], ["updated_at", "2014-10-10 23:51:51.429530"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_at" = ?, "last_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["current_sign_in_at", "2014-10-10 23:51:51.432653"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_at", "2014-10-10 23:51:51.432653"], ["last_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2014-10-10 23:51:51.433537"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 17ms (ActiveRecord: 0.8ms)
+Started GET "/" for 127.0.0.1 at 2014-10-11 00:51:51 +0100
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+Processing by LoggedInController#user_log_in as HTML
+  Rendered logged_in/user_log_in.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_navigation.html.erb (0.2ms)
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2014-10-11 00:54:05 +0100
+Processing by StaticPagesController#welcome_page as HTML
+  Rendered static_pages/welcome_page.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_navigation.html.erb (0.5ms)
+Completed 200 OK in 49ms (Views: 48.8ms | ActiveRecord: 0.0ms)
+Started GET "/sign_up" for 127.0.0.1 at 2014-10-11 00:54:05 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered /home/kris/.rvm/gems/ruby-2.0.0-p481@first_gem/gems/devise-3.3.0/app/views/devise/shared/_links.erb (1.1ms)
+  Rendered /home/kris/.rvm/gems/ruby-2.0.0-p481@first_gem/gems/devise-3.3.0/app/views/devise/registrations/new.html.erb within layouts/application (273.8ms)
+  Rendered layouts/_navigation.html.erb (0.2ms)
+Completed 200 OK in 278ms (Views: 276.1ms | ActiveRecord: 0.3ms)
+Started POST "/" for 127.0.0.1 at 2014-10-11 00:54:06 +0100
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"mail@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'mail@example.com' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-10 23:54:06.199076"], ["email", "mail@example.com"], ["encrypted_password", "$2a$04$b1ptswUsVioV5JrYs4SZfeqDhp0deVqCafQpTxJhlzlc4CBoBWLte"], ["updated_at", "2014-10-10 23:54:06.199076"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_at" = ?, "last_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["current_sign_in_at", "2014-10-10 23:54:06.202260"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_at", "2014-10-10 23:54:06.202260"], ["last_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2014-10-10 23:54:06.203125"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 56ms (ActiveRecord: 0.8ms)
+Started GET "/" for 127.0.0.1 at 2014-10-11 00:54:06 +0100
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+Processing by LoggedInController#user_log_in as HTML
+  Rendered logged_in/user_log_in.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_navigation.html.erb (0.2ms)
+Completed 200 OK in 2ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2014-10-11 00:54:33 +0100
+Processing by StaticPagesController#welcome_page as HTML
+  Rendered static_pages/welcome_page.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_navigation.html.erb (0.6ms)
+Completed 200 OK in 53ms (Views: 52.4ms | ActiveRecord: 0.0ms)
+Started GET "/sign_up" for 127.0.0.1 at 2014-10-11 00:54:33 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered /home/kris/.rvm/gems/ruby-2.0.0-p481@first_gem/gems/devise-3.3.0/app/views/devise/shared/_links.erb (1.0ms)
+  Rendered /home/kris/.rvm/gems/ruby-2.0.0-p481@first_gem/gems/devise-3.3.0/app/views/devise/registrations/new.html.erb within layouts/application (285.4ms)
+  Rendered layouts/_navigation.html.erb (0.2ms)
+Completed 200 OK in 290ms (Views: 288.0ms | ActiveRecord: 0.3ms)
+Started POST "/" for 127.0.0.1 at 2014-10-11 00:54:34 +0100
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"mail@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'mail@example.com' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-10 23:54:34.153258"], ["email", "mail@example.com"], ["encrypted_password", "$2a$04$GgUuHB65Sase7bIIlWOh.ecni3fr5gutfn56c7PA2TrvMertP2Ldi"], ["updated_at", "2014-10-10 23:54:34.153258"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_at" = ?, "last_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["current_sign_in_at", "2014-10-10 23:54:34.156759"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_at", "2014-10-10 23:54:34.156759"], ["last_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2014-10-10 23:54:34.157712"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 61ms (ActiveRecord: 0.8ms)
+Started GET "/" for 127.0.0.1 at 2014-10-11 00:54:34 +0100
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+Processing by LoggedInController#user_log_in as HTML
+  Rendered logged_in/user_log_in.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_navigation.html.erb (0.2ms)
+Completed 200 OK in 2ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2014-10-11 00:54:34 +0100
+Processing by StaticPagesController#welcome_page as HTML
+  Rendered layouts/_navigation.html.erb (0.2ms)
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+Started GET "/sign_up" for 127.0.0.1 at 2014-10-11 00:54:34 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered /home/kris/.rvm/gems/ruby-2.0.0-p481@first_gem/gems/devise-3.3.0/app/views/devise/shared/_links.erb (0.3ms)
+  Rendered layouts/_navigation.html.erb (0.1ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+Started POST "/" for 127.0.0.1 at 2014-10-11 00:54:34 +0100
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"mail@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'mail@example.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2014-10-10 23:54:34.190584"], ["email", "mail@example.com"], ["encrypted_password", "$2a$04$AucsNuoBOK.ppKAhUevrxOAh23omExCYZ3mGs7jHkEld0BljQALXW"], ["updated_at", "2014-10-10 23:54:34.190584"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_at" = ?, "last_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["current_sign_in_at", "2014-10-10 23:54:34.191976"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_at", "2014-10-10 23:54:34.191976"], ["last_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2014-10-10 23:54:34.192326"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 6ms (ActiveRecord: 0.6ms)
+Started GET "/" for 127.0.0.1 at 2014-10-11 00:54:34 +0100
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+Processing by LoggedInController#user_log_in as HTML
+  Rendered layouts/_navigation.html.erb (0.2ms)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (34.9ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2014-10-11 00:54:52 +0100
+Processing by StaticPagesController#welcome_page as HTML
+  Rendered static_pages/welcome_page.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_navigation.html.erb (0.5ms)
+Completed 200 OK in 14ms (Views: 14.2ms | ActiveRecord: 0.0ms)
+Started GET "/sign_up" for 127.0.0.1 at 2014-10-11 00:54:52 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered /home/kris/.rvm/gems/ruby-2.0.0-p481@first_gem/gems/devise-3.3.0/app/views/devise/shared/_links.erb (1.2ms)
+  Rendered /home/kris/.rvm/gems/ruby-2.0.0-p481@first_gem/gems/devise-3.3.0/app/views/devise/registrations/new.html.erb within layouts/application (314.1ms)
+  Rendered layouts/_navigation.html.erb (0.2ms)
+Completed 200 OK in 318ms (Views: 316.6ms | ActiveRecord: 0.3ms)
+Started POST "/" for 127.0.0.1 at 2014-10-11 00:54:52 +0100
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"mail@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'mail@example.com' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-10 23:54:52.954228"], ["email", "mail@example.com"], ["encrypted_password", "$2a$04$4GtgxOVmOiwGQtd7GVTzAe.K6WkQj83gV3DC6aF0jMz81zEV3CP4q"], ["updated_at", "2014-10-10 23:54:52.954228"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_at" = ?, "last_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["current_sign_in_at", "2014-10-10 23:54:52.957195"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_at", "2014-10-10 23:54:52.957195"], ["last_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2014-10-10 23:54:52.958070"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 17ms (ActiveRecord: 0.7ms)
+Started GET "/" for 127.0.0.1 at 2014-10-11 00:54:52 +0100
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+Processing by LoggedInController#user_log_in as HTML
+  Rendered logged_in/user_log_in.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_navigation.html.erb (0.2ms)
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2014-10-11 00:54:52 +0100
+Processing by StaticPagesController#welcome_page as HTML
+  Rendered layouts/_navigation.html.erb (0.2ms)
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2014-10-11 00:55:01 +0100
+Processing by StaticPagesController#welcome_page as HTML
+  Rendered static_pages/welcome_page.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_navigation.html.erb (0.6ms)
+Completed 200 OK in 50ms (Views: 49.7ms | ActiveRecord: 0.0ms)
+Started GET "/sign_up" for 127.0.0.1 at 2014-10-11 00:55:01 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered /home/kris/.rvm/gems/ruby-2.0.0-p481@first_gem/gems/devise-3.3.0/app/views/devise/shared/_links.erb (1.0ms)
+  Rendered /home/kris/.rvm/gems/ruby-2.0.0-p481@first_gem/gems/devise-3.3.0/app/views/devise/registrations/new.html.erb within layouts/application (286.7ms)
+  Rendered layouts/_navigation.html.erb (0.2ms)
+Completed 200 OK in 291ms (Views: 289.1ms | ActiveRecord: 0.3ms)
+Started POST "/" for 127.0.0.1 at 2014-10-11 00:55:02 +0100
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"mail@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'mail@example.com' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-10 23:55:02.092119"], ["email", "mail@example.com"], ["encrypted_password", "$2a$04$cFLSSm27nSAxyIOI3.sMf.GN9.CsStza4S.QL28kkqKLuT9O9Rue2"], ["updated_at", "2014-10-10 23:55:02.092119"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_at" = ?, "last_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["current_sign_in_at", "2014-10-10 23:55:02.094885"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_at", "2014-10-10 23:55:02.094885"], ["last_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2014-10-10 23:55:02.095796"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 57ms (ActiveRecord: 0.7ms)
+Started GET "/" for 127.0.0.1 at 2014-10-11 00:55:02 +0100
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+Processing by LoggedInController#user_log_in as HTML
+  Rendered logged_in/user_log_in.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_navigation.html.erb (0.2ms)
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2014-10-11 00:55:02 +0100
+Processing by StaticPagesController#welcome_page as HTML
+  Rendered layouts/_navigation.html.erb (0.2ms)
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2014-10-11 00:55:50 +0100
+Processing by StaticPagesController#welcome_page as HTML
+  Rendered static_pages/welcome_page.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_navigation.html.erb (0.6ms)
+Completed 200 OK in 50ms (Views: 49.9ms | ActiveRecord: 0.0ms)
+Started GET "/sign_up" for 127.0.0.1 at 2014-10-11 00:55:50 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered /home/kris/.rvm/gems/ruby-2.0.0-p481@first_gem/gems/devise-3.3.0/app/views/devise/shared/_links.erb (1.0ms)
+  Rendered /home/kris/.rvm/gems/ruby-2.0.0-p481@first_gem/gems/devise-3.3.0/app/views/devise/registrations/new.html.erb within layouts/application (279.8ms)
+  Rendered layouts/_navigation.html.erb (0.2ms)
+Completed 200 OK in 284ms (Views: 282.2ms | ActiveRecord: 0.3ms)
+Started POST "/" for 127.0.0.1 at 2014-10-11 00:55:51 +0100
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"mail@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'mail@example.com' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-10-10 23:55:51.257958"], ["email", "mail@example.com"], ["encrypted_password", "$2a$04$yflKyXYHmrOMo.g6fqgnZ.eUyIxmQB2DybApnX7c5gPNiQYNAmUqe"], ["updated_at", "2014-10-10 23:55:51.257958"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_at" = ?, "last_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["current_sign_in_at", "2014-10-10 23:55:51.261107"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_at", "2014-10-10 23:55:51.261107"], ["last_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2014-10-10 23:55:51.262025"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 57ms (ActiveRecord: 0.7ms)
+Started GET "/" for 127.0.0.1 at 2014-10-11 00:55:51 +0100
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+Processing by LoggedInController#user_log_in as HTML
+  Rendered logged_in/user_log_in.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_navigation.html.erb (0.2ms)
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
