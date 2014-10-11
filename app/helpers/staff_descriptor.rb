@@ -7,6 +7,7 @@ BASE_PERFORMANCE_LOWER = 5
 BASE_PERFORMANCE_UPPER = 10
 
 BASE_HAPPINESS = 70
+MINIMAL_HAPPINESS = 20
 
 class StaffDescriptor < Person
     attr_reader :happiness, :salary
@@ -61,6 +62,11 @@ class StaffDescriptor < Person
         p
     end
 
+    def leave?
+        @happiness < MINIMAL_HAPPINESS + [*-5..10].sample
+    end
+
     alias :add_customer :addCustomer
+    alias :change_salary :changeSalary
 
 end
