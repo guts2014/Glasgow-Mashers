@@ -12,7 +12,7 @@ class Client < Person
         traits = initialize_traits
         # Actual code
         @name = Faker::Name.name
-        @trait = traits[rand(traits.length)]
+        @trait = traits[traits.keys.sample]
         @affluence = [*AFFLUENCE_LOWER..AFFLUENCE_UPPER].sample
     end
 

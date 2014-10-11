@@ -16,7 +16,7 @@ class StaffMember < Person
         traits = initialize_traits
         # Actual code
         @name = Faker::Name.name
-        @trait = traits[rand(traits.length)]
+        @trait = traits[traits.keys.sample]
         @basePerformance = [*BASE_PERFORMANCE_LOWER..BASE_PERFORMANCE_UPPER].sample
         @happiness = BASE_HAPPINESS
         # Salary is dependent on trait's modifier + random factor
