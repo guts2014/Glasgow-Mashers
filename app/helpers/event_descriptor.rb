@@ -31,7 +31,7 @@ class EventCondition
             return eval("target"+"."+@property) == @value
         end
         if type == TYPE_GT
-            return eval("target"+"."+@property)> @value
+            return eval("target"+"."+@property) > @value
         end
         if type == TYPE_LT
             return eval("target"+"."+@property) < @value
@@ -68,6 +68,10 @@ class EventDescriptor
             return false if not c.applies? @target
         end
         rand(@chance) + 1 == @chance
+    end
+
+    def apply option
+        @target.add_modifier option.modifier if occurs? and @options.include? option
     end
     
 end
