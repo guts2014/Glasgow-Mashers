@@ -55,7 +55,7 @@ class EventDescriptor
 
     def ignoreOption
         a = Array.new
-        a.push(EventOption.new IGNORE_OPTION_TEXT, Modifier.new(0))
+        a.push(EventOption.new IGNORE_OPTION_TEXT, Modifier.new(0, 1))
         return a
     end
 
