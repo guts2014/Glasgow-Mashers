@@ -12,7 +12,7 @@ class CustomerDescriptor < Person
         # This shouldn't be like that
         traits = initialize_traits
         # Actual code
-        @name = Faker::Name.name
+        @name = Faker::Name.last_name
         @trait = traits[traits.keys.sample]
         @affluence = [*AFFLUENCE_LOWER..AFFLUENCE_UPPER].sample
         @serviced_by = nil

@@ -16,7 +16,7 @@ class StaffDescriptor < Person
         # This shouldn't be like that
         traits = initialize_traits
         # Actual code
-        @name = Faker::Name.name
+        @name = Faker::Name.last_name
         @trait = traits[traits.keys.sample]
         @basePerformance = [*BASE_PERFORMANCE_LOWER..BASE_PERFORMANCE_UPPER].sample
         @happiness = BASE_HAPPINESS
