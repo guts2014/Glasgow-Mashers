@@ -7,7 +7,7 @@ class Modifier
     end
 
     def apply base
-        base * modifier / 100
+        base * @modifier / 100
     end
 
 end
