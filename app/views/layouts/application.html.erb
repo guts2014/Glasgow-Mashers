@@ -1,16 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>GlasgowMashers</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+	<title>GlasgowMashers</title>
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= csrf_meta_tags %>
 </head>
 <body>
 	
-<%= render 'layouts/navigation.html.erb' %>
-<div class="margin-top"></div>
-<%= yield %>
+	<%= render 'layouts/navigation.html.erb' %>
+	<div class="margin-top"></div>
+	<div class="row">
+		<div class="col-md-2 left-panel">
+			
+		</div>
+
+		<%= yield %>
+		
+		<div class="col-md-2 right-panel">
+
+		</div>
+	</div>
+
+
 
 </body>
 </html>

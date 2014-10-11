@@ -3,7 +3,7 @@
 	<div class="row">
 		<div class="col-md-offset-1 logged-margin-top">
 
-			<h1><%= link_to raw("&lArr; Staff"), root_path %></h1>
+			<h1><%= link_to raw("&lArr; Customers"), root_path %></h1>
 			<small>page number: </small>
 		</div>
 	</div>
@@ -11,24 +11,16 @@
 
 
 		<div id="staff-member-display">
-			<% @staff.each do |t| %>
+			<% @customers.each do |t| %>
 
 			<div class="col-md-2 staff-styling">
 				<div class="well">
 					Name: <%= t.name %> <br>
-					Happiness: <%= t.happiness %> <br>
-					Salary: <%= t.salary %> <br>
-					Performance: <%= t.performance %> <br>
-
+					Affluence: <%= t.affluence %> <br>
+					Assigned: <%= t.staff.name %> <br>
 				</div>
-
 			</div>
 			<% end %>
 		</div>
 	</div>
 </div>
-
-
-
-
-

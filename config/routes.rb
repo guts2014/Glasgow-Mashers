@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   }
 
   resources :staffs
+  resources :customers
 
   authenticated :user do 
     root 'logged_in#user_log_in', as: :authenticated_root, via: :get
@@ -16,7 +17,8 @@ Rails.application.routes.draw do
     root 'static_pages#welcome_page'
   end
 
-  match "/staff/:page", to: 'staffs#next_page', via: [:get]
-  match "/customers/:page", to: 'customers#next_page', via: [:get]
+  match "/staff/:page",        to: 'staffs#next_page',        via: [:get]
+  match "/customers/:page",    to: 'customers#next_page',     via: [:get]
+  #get '/staff/new_staff/' => 'staffs#new_staff', as: :reassign_staff
 
 end

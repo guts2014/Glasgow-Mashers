@@ -1,10 +1,14 @@
 class StaffsController < ApplicationController
 	def index
-		@staffs = Staff.pagination(0,5)
-		@clients = Client.pagination(0,5)
+		@staff = Staff.all
 	end
 
 	def show
+		@staff = Staff.find(params[:id])
+	end
+
+	def new_staff
+		@customers = Staff.all
 	end
 
 	def new
