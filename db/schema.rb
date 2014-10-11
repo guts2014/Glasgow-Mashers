@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141010225801) do
+ActiveRecord::Schema.define(version: 20141011140554) do
+
+  create_table "customers", force: true do |t|
+    t.string   "name"
+    t.string   "trait"
+    t.integer  "affluence"
+    t.integer  "staff_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "players", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -26,10 +35,44 @@ ActiveRecord::Schema.define(version: 20141010225801) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "money"
+    t.string   "name"
+    t.integer  "base_income"
   end
 
   add_index "players", ["email"], name: "index_players_on_email", unique: true
   add_index "players", ["reset_password_token"], name: "index_players_on_reset_password_token", unique: true
+
+  create_table "staffs", force: true do |t|
+    t.string   "name"
+    t.integer  "happiness"
+    t.integer  "salary"
+    t.integer  "performance"
+    t.string   "trait_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "trait_hates", force: true do |t|
+    t.string   "who_hates"
+    t.string   "what_hates"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "trait_likes", force: true do |t|
+    t.string   "who_likes"
+    t.string   "what_likes"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "traits", force: true do |t|
+    t.string   "name"
+    t.integer  "modifier"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

@@ -1,12 +1,37 @@
-// Place all the styles related to the StaticPages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 .navbar-inverse .navbar-brand {
-	color: yellow;
+	color: #ddd;
+	font-size: 30px; 
+}
 
-
+body {
+	background-color: #333; 
+	    
 }
 
 .col-md-1{
 	width: 8%;
+}
+
+button {
+	a {
+		color: #fff;
+		&:hover {
+			color: #fff;
+			text-decoration: none ;
+		}
+	}
+}
+
+.margin-top {
+	margin-top: 50px;
+}
+
+.jumbotron {
+	background-image: url("cool-background.jpg") ;
+	color: #FFF ;
+	h1 {
+		color: #FFF ;
+	} 
+	
+
 }

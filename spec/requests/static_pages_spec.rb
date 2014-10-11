@@ -7,7 +7,7 @@ RSpec.describe "StaticPages", :type => :request do
       visit root_path
       expect(page).to have_content "Sign in"
       expect(page).to have_content "New_account"
-      expect(page).to have_content "GMSS"
+      expect(page).to have_content "Glasgow Mashers"
     end
   end
 end

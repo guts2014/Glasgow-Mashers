@@ -1,0 +1,32 @@
+.row {
+	h2 {
+		color: #eee;
+	}
+	.new_user {
+		color: #eee;
+
+		h1 {
+			color: #eee; 
+		}
+
+		#user_remember_me {
+			width: 15px;
+			height: 15px; 
+		}
+
+		input {
+			color: #444; 
+			width: 330px;
+			height: 40px ;
+			&:focus {
+				-webkit-box-shadow: 0 0 7px 4px #0f2; 
+				box-shadow: 0 0 7px 4px #0f2; 
+			}
+		} 
+	}
+
+	.margin-button {
+		margin-top: 25px; 
+	}
+}
+
