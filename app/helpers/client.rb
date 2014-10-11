@@ -1,8 +1,10 @@
+require("./person.rb")
+
 AFFLUENCE_LOWER = 500
 AFFLUENCE_UPPER = 1000
 
-class Client
-    attr_reader :name, :trait, :affluence
+class Client < Person
+    attr_reader :affluence
 
     def initialize
         # This will all be pulled from a DB
