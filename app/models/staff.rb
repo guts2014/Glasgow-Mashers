@@ -7,6 +7,7 @@ class Staff < ActiveRecord::Base
 	validates :trait_id, presence: true
 	validate  :happiness_not_negative
 	validate  :salary_not_negative
+	has_many  :customers
 
 	def happiness_not_negative 
 		if happiness.present? && happiness < 1

@@ -5,6 +5,7 @@
 
 	<!-- CENTRAL PANEL -->
 	<div class="col-md-8 central-panel">
+		<!-- STAFF -->
 		<div class="row">
 			<div class="col-md-5 col-md-offset-1 logged-margin-top">
 				<h1>Staff</h1>
@@ -16,7 +17,7 @@
 			<div class="col-md-1 staff-styling arrow" id="prev">
 				&lArr;
 			</div>
-			<!-- STAFF -->
+			
 			<div id="staff-member-display">
 				<% @staffs.each do |t| %>
 
@@ -26,7 +27,7 @@
 						Happiness: <%= t.happiness %> <br>
 						Salary: <%= t.salary %> <br>
 						Performance: <%= t.performance %> <br>
-						Trait: <%= t.trait_id %> <br>
+						
 					</div>
 
 				</div>
@@ -39,8 +40,43 @@
 			</div>
 			
 		</div>
-	</div>
-	<div class="col-md-2 right-panel">
 		
+		<!-- CUSTOMER PART -->
+		<div class="row">
+			<div class="col-md-5 col-md-offset-1 logged-margin-top">
+				<h1>Customers</h1>
+				<small>page number: </small>
+			</div>
+		</div>
+		<div class="row">
+			<!-- Dummy col -->
+			<div class="col-md-1 staff-styling arrow" id="prev-cust">
+				&lArr;
+			</div>
+			
+			<div id="customer-member-display">
+				<% @customers.each do |t| %>
+
+				<div class="col-md-2 staff-styling">
+					<div class="well">
+						Name: <%= t.name %> <br>
+						Affluence: <%= t.affluence %> <br>
+						Handled by: <%= t.staff.name %> <br>
+					</div>
+
+				</div>
+				<% end %>
+			</div>
+			
+			
+			<div class="col-md-1 staff-styling arrow" id="next-cust">
+				&rArr;
+			</div>
+			
+		</div> <!-- END OF CUSTOMER -->
+	</div> <!--  END-->
+	
+	<div class="col-md-2 right-panel">
+
 	</div>
 </div>

@@ -17,5 +17,6 @@ Rails.application.routes.draw do
   end
 
   match "/staff/:page", to: 'staffs#next_page', via: [:get]
+  match "/customers/:page", to: 'customers#next_page', via: [:get]
 
 end
