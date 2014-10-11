@@ -5,7 +5,7 @@ INITIAL_BASE_INCOME = 3000
 class ManagerDescriptor < Person
     
     attr_reader :email, :money, :baseIncome, :name, :staff
-    attr_writer :name
+    attr_writer :name, :baseIncome
 
     def initialize email, name
         @email = email

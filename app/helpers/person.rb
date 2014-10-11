@@ -1,6 +1,6 @@
 class Person
     attr_reader :name, :trait
-    attr_writer :modifiers
+    attr_reader :modifiers
 
     def applyModifiers base
         baseInitial = base
@@ -9,5 +9,11 @@ class Person
         end
         base
     end
+
+    def addModifier modifier
+        @modifiers.push(modifier)
+    end
+
+    alias :add_modifier :addModifier
 
 end
