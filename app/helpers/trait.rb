@@ -13,6 +13,7 @@ class Trait
         @likes[trait] = true
     end
     def likes? (trait)
+        true if trait == @name
         @likes[trait].nil? ? false : true; 
     end
 
