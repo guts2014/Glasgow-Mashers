@@ -10,9 +10,10 @@ BASE_HAPPINESS = 70
 MINIMAL_HAPPINESS = 20
 
 class StaffDescriptor < Person
-    attr_reader :happiness, :salary
+    attr_reader :happiness, :salary, :customers
+    attr_reader :id
 
-    def initialize
+    def initialize id
         # This shouldn't be like that
         traits = initialize_traits
         # Actual code
@@ -24,6 +25,7 @@ class StaffDescriptor < Person
         @salary = (@trait.modifier.abs + rand(10) + 1) * 5 * 20;
         @modifiers = []
         @customers = []
+        @id = id
     end
 
     def addCustomer customer
@@ -43,6 +45,7 @@ class StaffDescriptor < Person
         p = performance
         @happiness -= 10 if p > 1.5 * @basePerformance
         @happiness = applyModifiers @happiness
+        p
     end
 
     def performance

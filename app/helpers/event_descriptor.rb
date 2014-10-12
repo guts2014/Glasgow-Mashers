@@ -8,10 +8,12 @@ TYPE_LT = "<"
 class EventOption
 
     attr_reader :text, :modifier
+    attr_reader :id
 
-    def initialize text, modifier
+    def initialize id, text, modifier
         @text = text
         @modifier = modifier 
+        @id = id
     end
 
 end
