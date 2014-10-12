@@ -12,6 +12,13 @@ function two_arrays_chart(data_string, div_id, array1, array2){
 			text: data_string,
 			fontColor: "#FFFFFF"
 		},
+		toolTip:{
+			content: function(e){
+				var content;
+				content = e.entries[0].dataSeries.name + " <strong>"+e.entries[0].dataPoint.y  ;
+				return content;
+			},
+		},
 		axisX:{
 			title: "Days passed",
 			labelFontColor: "#FFFFFF",
@@ -50,6 +57,13 @@ function one_array_chart(data_string, div_id, array1){
         title:{
 			text: data_string,
 			fontColor: "#FFFFFF"
+		},
+		toolTip:{
+			content: function(e){
+				var content;
+				content = e.entries[0].dataSeries.name + " <strong>"+e.entries[0].dataPoint.y  ;
+				return content;
+			},
 		},
 		axisX:{
 			title: "Days passed",
