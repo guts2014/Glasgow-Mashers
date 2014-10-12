@@ -1,6 +1,7 @@
 class Person
     attr_reader :name, :trait
     attr_reader :modifiers
+    attr_writer :name
 
     def applyModifiers base
         baseInitial = base

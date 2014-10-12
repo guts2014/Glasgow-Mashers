@@ -7,7 +7,7 @@ AFFLUENCE_UPPER = 2000
 class CustomerDescriptor < Person
     attr_reader :affluence, :serviced_by
     attr_reader :id
-    attr_writer :serviced_by
+    attr_writer :serviced_by, :affluence
 
     def initialize id
         # This shouldn't be like that

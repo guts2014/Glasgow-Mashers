@@ -12,6 +12,7 @@ MINIMAL_HAPPINESS = 20
 class StaffDescriptor < Person
     attr_reader :happiness, :salary, :customers
     attr_reader :id
+    attr_writer :name, :happiness, :salary, :performance, :trait, :customers
 
     def initialize id
         # This shouldn't be like that
