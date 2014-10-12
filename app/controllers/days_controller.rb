@@ -75,6 +75,7 @@ class DaysController < ApplicationController
 			staff_member.name        = t.name
 			staff_member.happiness   = t.happiness
 			staff_member.salary      = t.salary
+			staff_member.basePerformance = t.base_performance
 			staff_member.performance = t.performance
 			# Iteraateee
 
@@ -115,6 +116,7 @@ class DaysController < ApplicationController
 		staff_descriptor.name        = staff_model.name
 		staff_descriptor.happiness   = staff_model.happiness
 		staff_descriptor.salary      = staff_model.salary
+		staff_description.basePerformance = staff_model.base_performance
 		staff_descriptor.performance = staff_model.performance
 
 		# Iteraateee
