@@ -30,9 +30,13 @@ class DaysController < ApplicationController
 		income   = manager_descriptor.income
 
 		# Update staff performance in database
+		total_happiness = 0
+		total_performance = 0
+
 		staff_descriptor.each do |st|
 			performance = st.evaluate
 			happpiness  = st.happiness
+			total_happiness += happiness
 
 			this_staff_member = Staff.find(st.id)
 			this_staff_member.happiness   = happiness
@@ -41,7 +45,17 @@ class DaysController < ApplicationController
 			this_staff_member.save
 		end
 
-		@day = Day.new #data from game engine
+
+		@day = Day.new(
+			day_number:           last_day_nubmer + 1,
+			average_happiness:    total_happiness / staff_descriptor.length,
+			average_productivity: total_performance / staff_descriptor.length,
+			income:               income,
+			expenses:             expenses,
+			user_id:              user.id
+
+			)
+		@day.save
 
 	end
 
