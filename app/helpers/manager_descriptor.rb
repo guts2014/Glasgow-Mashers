@@ -18,7 +18,7 @@ class ManagerDescriptor < Person
     end
 
     def income
-        applyModifiers @baseIncome
+        applyModifiers @baseIncome 
     end
 
     def expenses

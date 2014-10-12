@@ -56,6 +56,9 @@ class DaysController < ApplicationController
 			this_staff_member.save
 		end
 
+		staff_descriptor.each do |st| 
+			current_user.staffs.find(st.id).delete if st.leave?
+		end
 
 		@day = Day.new(
 			day_number:           last_day_nubmer + 1,

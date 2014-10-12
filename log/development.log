@@ -62404,3 +62404,2126 @@ Processing by DaysController#index as */*
   [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
   [1m[35mDay Load (0.4ms)[0m  SELECT "days".* FROM "days"  WHERE "days"."user_id" = ?  [["user_id", 1]]
 Completed 200 OK in 17ms (Views: 14.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/customers" for 127.0.0.1 at 2014-10-12 07:56:33 +0100
+Processing by CustomersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCustomer Load (0.3ms)[0m  SELECT "customers".* FROM "customers" INNER JOIN "staffs" ON "customers"."staff_id" = "staffs"."id" WHERE "staffs"."user_id" = ?  [["user_id", 1]]
+  [1m[36mStaff Load (0.1ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mStaff Load (0.1ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mStaff Load (0.1ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered customers/index.html.erb within layouts/application (9.2ms)
+  Rendered layouts/_navigation.html.erb (0.8ms)
+  Rendered layouts/_left_pane.html.erb (0.2ms)
+  Rendered layouts/_right_pane.html.erb (0.2ms)
+Completed 200 OK in 169ms (Views: 163.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/customers/3" for 127.0.0.1 at 2014-10-12 07:56:34 +0100
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mCustomer Load (0.3ms)[0m  [1mSELECT  "customers".* FROM "customers" INNER JOIN "staffs" ON "customers"."staff_id" = "staffs"."id" WHERE "staffs"."user_id" = ? AND "customers"."id" = ? LIMIT 1[0m  [["user_id", 1], ["id", 3]]
+  [1m[35mStaff Load (0.2ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered customers/show.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_navigation.html.erb (0.3ms)
+  Rendered layouts/_left_pane.html.erb (0.0ms)
+  Rendered layouts/_right_pane.html.erb (0.0ms)
+Completed 200 OK in 172ms (Views: 166.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-12 07:56:35 +0100
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+Processing by LoggedInController#user_log_in as HTML
+  [1m[35mStaff Load (0.1ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ? LIMIT 5 OFFSET 0  [["user_id", 1]]
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT  "customers".* FROM "customers" INNER JOIN "staffs" ON "customers"."staff_id" = "staffs"."id" WHERE "staffs"."user_id" = ? LIMIT 5 OFFSET 0[0m  [["user_id", 1]]
+  [1m[35mStaff Load (0.0ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mStaff Load (0.0ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mStaff Load (0.0ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered logged_in/user_log_in.html.erb within layouts/application (5.3ms)
+  Rendered layouts/_navigation.html.erb (0.3ms)
+  Rendered layouts/_left_pane.html.erb (0.0ms)
+  Rendered layouts/_right_pane.html.erb (0.0ms)
+Completed 200 OK in 164ms (Views: 162.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/customers" for 127.0.0.1 at 2014-10-12 07:57:01 +0100
+Processing by CustomersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCustomer Load (0.1ms)[0m  SELECT "customers".* FROM "customers" INNER JOIN "staffs" ON "customers"."staff_id" = "staffs"."id" WHERE "staffs"."user_id" = ?  [["user_id", 1]]
+  [1m[36mStaff Load (0.1ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mStaff Load (0.1ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mStaff Load (0.1ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered customers/index.html.erb within layouts/application (4.2ms)
+  Rendered layouts/_navigation.html.erb (0.3ms)
+  Rendered layouts/_left_pane.html.erb (0.0ms)
+  Rendered layouts/_right_pane.html.erb (0.0ms)
+Completed 200 OK in 169ms (Views: 165.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-12 07:58:07 +0100
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+Processing by LoggedInController#user_log_in as HTML
+  [1m[36mStaff Load (0.2ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ? LIMIT 5 OFFSET 0[0m  [["user_id", 1]]
+  [1m[35mCustomer Load (0.1ms)[0m  SELECT  "customers".* FROM "customers" INNER JOIN "staffs" ON "customers"."staff_id" = "staffs"."id" WHERE "staffs"."user_id" = ? LIMIT 5 OFFSET 0  [["user_id", 1]]
+  [1m[36mStaff Load (0.1ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mStaff Load (0.0ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mStaff Load (0.0ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered logged_in/user_log_in.html.erb within layouts/application (5.2ms)
+  Rendered layouts/_navigation.html.erb (0.3ms)
+  Rendered layouts/_left_pane.html.erb (0.0ms)
+  Rendered layouts/_right_pane.html.erb (0.0ms)
+Completed 200 OK in 163ms (Views: 160.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/create_day" for 127.0.0.1 at 2014-10-12 08:02:47 +0100
+Processing by DaysController#create as HTML
+  Parameters: {"authenticity_token"=>"DO6hEi7NrcIIwP6cbmoObhuJPCvO4rbXj8fe1pTca6Q="}
+  [1m[35mDay Load (0.1ms)[0m  SELECT  "days".* FROM "days"   ORDER BY "days"."id" DESC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "days".* FROM "days"   ORDER BY "days"."id" DESC LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mStaff Load (0.1ms)[0m  [1mSELECT "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mStaff Load (0.1ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ? AND "staffs"."id" = ? LIMIT 1  [["user_id", 1], ["id", 1]]
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT "customers".* FROM "customers"  WHERE "customers"."staff_id" = ?[0m  [["staff_id", 1]]
+  [1m[35mStaff Load (0.1ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ? AND "staffs"."id" = ? LIMIT 1  [["user_id", 1], ["id", 2]]
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT "customers".* FROM "customers"  WHERE "customers"."staff_id" = ?[0m  [["staff_id", 2]]
+  [1m[35mStaff Load (0.1ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ? AND "staffs"."id" = ? LIMIT 1  [["user_id", 1], ["id", 3]]
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT "customers".* FROM "customers"  WHERE "customers"."staff_id" = ?[0m  [["staff_id", 3]]
+  [1m[35mStaff Load (0.0ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ? AND "staffs"."id" = ? LIMIT 1  [["user_id", 1], ["id", 4]]
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT "customers".* FROM "customers"  WHERE "customers"."staff_id" = ?[0m  [["staff_id", 4]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "money" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["money", 39790], ["updated_at", "2014-10-12 07:02:47.236154"]]
+  [1m[35m (128.6ms)[0m  commit transaction
+  [1m[36mStaff Load (0.4ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35mStaff Load (0.0ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "staffs" SET "performance" = ?, "updated_at" = ? WHERE "staffs"."id" = 2  [["performance", 8], ["updated_at", "2014-10-12 07:02:47.369830"]]
+  [1m[36m (96.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mStaff Load (0.2ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mStaff Load (0.1ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "staffs" SET "performance" = ?, "updated_at" = ? WHERE "staffs"."id" = 4[0m  [["performance", 7], ["updated_at", "2014-10-12 07:02:47.471333"]]
+  [1m[35m (105.9ms)[0m  commit transaction
+Completed 500 Internal Server Error in 388ms
+
+NoMethodError (undefined method `staff' for #<User:0x000000061b4698>):
+  app/controllers/days_controller.rb:60:in `block in create'
+  app/controllers/days_controller.rb:59:in `each'
+  app/controllers/days_controller.rb:59:in `create'
+
+
+  Rendered /home/kris/.rvm/gems/ruby-2.0.0-p481@first_gem/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /home/kris/.rvm/gems/ruby-2.0.0-p481@first_gem/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /home/kris/.rvm/gems/ruby-2.0.0-p481@first_gem/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/kris/.rvm/gems/ruby-2.0.0-p481@first_gem/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-12 08:02:59 +0100
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+Processing by LoggedInController#user_log_in as HTML
+  [1m[35mStaff Load (0.1ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ? LIMIT 5 OFFSET 0  [["user_id", 1]]
+  [1m[36mCustomer Load (0.2ms)[0m  [1mSELECT  "customers".* FROM "customers" INNER JOIN "staffs" ON "customers"."staff_id" = "staffs"."id" WHERE "staffs"."user_id" = ? LIMIT 5 OFFSET 0[0m  [["user_id", 1]]
+  [1m[35mStaff Load (0.1ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mStaff Load (0.0ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mStaff Load (0.0ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered logged_in/user_log_in.html.erb within layouts/application (15.5ms)
+  Rendered layouts/_navigation.html.erb (0.4ms)
+  Rendered layouts/_left_pane.html.erb (0.0ms)
+  Rendered layouts/_right_pane.html.erb (0.0ms)
+Completed 200 OK in 185ms (Views: 176.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/combine_all.css?body=1" for 127.0.0.1 at 2014-10-12 08:02:59 +0100
+
+
+Started GET "/assets/customers.css?body=1" for 127.0.0.1 at 2014-10-12 08:02:59 +0100
+
+
+Started GET "/assets/days.css?body=1" for 127.0.0.1 at 2014-10-12 08:02:59 +0100
+
+
+Started GET "/assets/events_decisions/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-10-12 08:02:59 +0100
+
+
+Started GET "/assets/events_decisions/maincss.css?body=1" for 127.0.0.1 at 2014-10-12 08:02:59 +0100
+
+
+Started GET "/assets/devise_forms.css?body=1" for 127.0.0.1 at 2014-10-12 08:02:59 +0100
+
+
+Started GET "/assets/maincss.css?body=1" for 127.0.0.1 at 2014-10-12 08:02:59 +0100
+
+
+Started GET "/assets/registrations.css?body=1" for 127.0.0.1 at 2014-10-12 08:02:59 +0100
+
+
+Started GET "/assets/staffs.css?body=1" for 127.0.0.1 at 2014-10-12 08:02:59 +0100
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2014-10-12 08:02:59 +0100
+
+
+Started GET "/assets/user_logged.css?body=1" for 127.0.0.1 at 2014-10-12 08:02:59 +0100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-12 08:02:59 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-12 08:02:59 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-12 08:02:59 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-12 08:02:59 +0100
+
+
+Started GET "/assets/canvasjs.min.js?body=1" for 127.0.0.1 at 2014-10-12 08:02:59 +0100
+
+
+Started GET "/assets/chart_functions.js?body=1" for 127.0.0.1 at 2014-10-12 08:02:59 +0100
+
+
+Started GET "/assets/customers.js?body=1" for 127.0.0.1 at 2014-10-12 08:02:59 +0100
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2014-10-12 08:02:59 +0100
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2014-10-12 08:02:59 +0100
+
+
+Started GET "/assets/days.js?body=1" for 127.0.0.1 at 2014-10-12 08:02:59 +0100
+
+
+Started GET "/assets/jquery.easytabs.min.js?body=1" for 127.0.0.1 at 2014-10-12 08:02:59 +0100
+
+
+Started GET "/assets/logged_in.js?body=1" for 127.0.0.1 at 2014-10-12 08:02:59 +0100
+
+
+Started GET "/assets/mainscript.js?body=1" for 127.0.0.1 at 2014-10-12 08:02:59 +0100
+
+
+Started GET "/assets/pagination.js?body=1" for 127.0.0.1 at 2014-10-12 08:02:59 +0100
+
+
+Started GET "/assets/registrations.js?body=1" for 127.0.0.1 at 2014-10-12 08:02:59 +0100
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2014-10-12 08:02:59 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-12 08:02:59 +0100
+
+
+Started GET "/assets/traits.js?body=1" for 127.0.0.1 at 2014-10-12 08:02:59 +0100
+
+
+Started GET "/assets/staffs.js?body=1" for 127.0.0.1 at 2014-10-12 08:02:59 +0100
+
+
+Started POST "/create_day" for 127.0.0.1 at 2014-10-12 08:03:02 +0100
+Processing by DaysController#create as HTML
+  Parameters: {"authenticity_token"=>"DO6hEi7NrcIIwP6cbmoObhuJPCvO4rbXj8fe1pTca6Q="}
+  [1m[36mDay Load (0.1ms)[0m  [1mSELECT  "days".* FROM "days"   ORDER BY "days"."id" DESC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "days".* FROM "days"   ORDER BY "days"."id" DESC LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mStaff Load (0.2ms)[0m  SELECT "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ?  [["user_id", 1]]
+  [1m[36mStaff Load (0.1ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ? AND "staffs"."id" = ? LIMIT 1[0m  [["user_id", 1], ["id", 1]]
+  [1m[35mCustomer Load (0.1ms)[0m  SELECT "customers".* FROM "customers"  WHERE "customers"."staff_id" = ?  [["staff_id", 1]]
+  [1m[36mStaff Load (0.1ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ? AND "staffs"."id" = ? LIMIT 1[0m  [["user_id", 1], ["id", 2]]
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT "customers".* FROM "customers"  WHERE "customers"."staff_id" = ?  [["staff_id", 2]]
+  [1m[36mStaff Load (0.1ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ? AND "staffs"."id" = ? LIMIT 1[0m  [["user_id", 1], ["id", 3]]
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT "customers".* FROM "customers"  WHERE "customers"."staff_id" = ?  [["staff_id", 3]]
+  [1m[36mStaff Load (0.0ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ? AND "staffs"."id" = ? LIMIT 1[0m  [["user_id", 1], ["id", 4]]
+  [1m[35mCustomer Load (0.1ms)[0m  SELECT "customers".* FROM "customers"  WHERE "customers"."staff_id" = ?  [["staff_id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "users" SET "money" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["money", 40010], ["updated_at", "2014-10-12 07:03:02.343229"]]
+  [1m[36m (174.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mStaff Load (0.2ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mStaff Load (0.1ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "staffs" SET "performance" = ?, "updated_at" = ? WHERE "staffs"."id" = 2[0m  [["performance", 4], ["updated_at", "2014-10-12 07:03:02.523985"]]
+  [1m[35m (117.9ms)[0m  commit transaction
+  [1m[36mStaff Load (0.2ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35mStaff Load (0.1ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36mStaff Load (0.1ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ? AND "staffs"."id" = ? LIMIT 1[0m  [["user_id", 1], ["id", 1]]
+  [1m[35mSQL (127.6ms)[0m  DELETE FROM "staffs" WHERE "staffs"."id" = 1
+  [1m[36mStaff Load (0.2ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ? AND "staffs"."id" = ? LIMIT 1[0m  [["user_id", 1], ["id", 3]]
+  [1m[35mSQL (188.5ms)[0m  DELETE FROM "staffs" WHERE "staffs"."id" = 3
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "days" ("average_productivity", "average_staff_happiness", "created_at", "day_number", "expenses", "income", "money", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["average_productivity", 8], ["average_staff_happiness", 35], ["created_at", "2014-10-12 07:03:02.970562"], ["day_number", 57], ["expenses", 2905], ["income", 3000], ["money", 40010], ["updated_at", "2014-10-12 07:03:02.970562"], ["user_id", 1]]
+  [1m[36m (129.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 786ms (ActiveRecord: 743.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-12 08:03:03 +0100
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+Processing by LoggedInController#user_log_in as HTML
+  [1m[36mStaff Load (0.1ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ? LIMIT 5 OFFSET 0[0m  [["user_id", 1]]
+  [1m[35mCustomer Load (0.1ms)[0m  SELECT  "customers".* FROM "customers" INNER JOIN "staffs" ON "customers"."staff_id" = "staffs"."id" WHERE "staffs"."user_id" = ? LIMIT 5 OFFSET 0  [["user_id", 1]]
+  [1m[36mStaff Load (0.1ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered logged_in/user_log_in.html.erb within layouts/application (4.8ms)
+  Rendered layouts/_navigation.html.erb (0.3ms)
+  Rendered layouts/_left_pane.html.erb (0.0ms)
+  Rendered layouts/_right_pane.html.erb (0.0ms)
+Completed 200 OK in 161ms (Views: 159.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/combine_all.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:03 +0100
+
+
+Started GET "/assets/days.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:03 +0100
+
+
+Started GET "/assets/customers.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:03 +0100
+
+
+Started GET "/assets/devise_forms.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:03 +0100
+
+
+Started GET "/assets/events_decisions/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:03 +0100
+
+
+Started GET "/assets/events_decisions/maincss.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:03 +0100
+
+
+Started GET "/assets/maincss.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:03 +0100
+
+
+Started GET "/assets/registrations.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:03 +0100
+
+
+Started GET "/assets/staffs.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:03 +0100
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:03 +0100
+
+
+Started GET "/assets/user_logged.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:03 +0100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:03 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:03 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:03 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:03 +0100
+
+
+Started GET "/assets/canvasjs.min.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:03 +0100
+
+
+Started GET "/assets/chart_functions.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:03 +0100
+
+
+Started GET "/assets/customers.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:03 +0100
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2014-10-12 08:03:03 +0100
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2014-10-12 08:03:03 +0100
+
+
+Started GET "/assets/days.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:03 +0100
+
+
+Started GET "/assets/jquery.easytabs.min.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:03 +0100
+
+
+Started GET "/assets/logged_in.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:03 +0100
+
+
+Started GET "/assets/pagination.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:03 +0100
+
+
+Started GET "/assets/registrations.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:03 +0100
+
+
+Started GET "/assets/mainscript.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:03 +0100
+
+
+Started GET "/assets/staffs.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:03 +0100
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:03 +0100
+
+
+Started GET "/assets/traits.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:03 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:03 +0100
+
+
+Started POST "/create_day" for 127.0.0.1 at 2014-10-12 08:03:46 +0100
+Processing by DaysController#create as HTML
+  Parameters: {"authenticity_token"=>"DO6hEi7NrcIIwP6cbmoObhuJPCvO4rbXj8fe1pTca6Q="}
+  [1m[35mDay Load (0.4ms)[0m  SELECT  "days".* FROM "days"   ORDER BY "days"."id" DESC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "days".* FROM "days"   ORDER BY "days"."id" DESC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mStaff Load (0.2ms)[0m  [1mSELECT "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mStaff Load (0.1ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ? AND "staffs"."id" = ? LIMIT 1  [["user_id", 1], ["id", 2]]
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT "customers".* FROM "customers"  WHERE "customers"."staff_id" = ?[0m  [["staff_id", 2]]
+  [1m[35mStaff Load (0.1ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ? AND "staffs"."id" = ? LIMIT 1  [["user_id", 1], ["id", 4]]
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT "customers".* FROM "customers"  WHERE "customers"."staff_id" = ?[0m  [["staff_id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "money" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["money", 41689], ["updated_at", "2014-10-12 07:03:46.215508"]]
+  [1m[35m (140.2ms)[0m  commit transaction
+  [1m[36mStaff Load (0.1ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mStaff Load (0.0ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "days" ("average_productivity", "average_staff_happiness", "created_at", "day_number", "expenses", "income", "money", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["average_productivity", 5], ["average_staff_happiness", 70], ["created_at", "2014-10-12 07:03:46.359580"], ["day_number", 58], ["expenses", 1409], ["income", 3000], ["money", 41689], ["updated_at", "2014-10-12 07:03:46.359580"], ["user_id", 1]]
+  [1m[36m (130.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 290ms (ActiveRecord: 273.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-12 08:03:46 +0100
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+Processing by LoggedInController#user_log_in as HTML
+  [1m[36mStaff Load (0.1ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ? LIMIT 5 OFFSET 0[0m  [["user_id", 1]]
+  [1m[35mCustomer Load (0.1ms)[0m  SELECT  "customers".* FROM "customers" INNER JOIN "staffs" ON "customers"."staff_id" = "staffs"."id" WHERE "staffs"."user_id" = ? LIMIT 5 OFFSET 0  [["user_id", 1]]
+  [1m[36mStaff Load (0.1ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered logged_in/user_log_in.html.erb within layouts/application (4.0ms)
+  Rendered layouts/_navigation.html.erb (0.3ms)
+  Rendered layouts/_left_pane.html.erb (0.0ms)
+  Rendered layouts/_right_pane.html.erb (0.0ms)
+Completed 200 OK in 170ms (Views: 168.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/combine_all.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:46 +0100
+
+
+Started GET "/assets/customers.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:46 +0100
+
+
+Started GET "/assets/days.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:46 +0100
+
+
+Started GET "/assets/maincss.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:46 +0100
+
+
+Started GET "/assets/events_decisions/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:46 +0100
+
+
+Started GET "/assets/devise_forms.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:46 +0100
+
+
+Started GET "/assets/events_decisions/maincss.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:46 +0100
+
+
+Started GET "/assets/registrations.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:46 +0100
+
+
+Started GET "/assets/staffs.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:46 +0100
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:46 +0100
+
+
+Started GET "/assets/user_logged.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:46 +0100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:46 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:46 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:46 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:46 +0100
+
+
+Started GET "/assets/canvasjs.min.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:46 +0100
+
+
+Started GET "/assets/chart_functions.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:46 +0100
+
+
+Started GET "/assets/customers.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:46 +0100
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2014-10-12 08:03:46 +0100
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2014-10-12 08:03:46 +0100
+
+
+Started GET "/assets/days.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:46 +0100
+
+
+Started GET "/assets/jquery.easytabs.min.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:46 +0100
+
+
+Started GET "/assets/logged_in.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:46 +0100
+
+
+Started GET "/assets/mainscript.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:46 +0100
+
+
+Started GET "/assets/pagination.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:46 +0100
+
+
+Started GET "/assets/registrations.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:46 +0100
+
+
+Started GET "/assets/staffs.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:46 +0100
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:46 +0100
+
+
+Started GET "/assets/traits.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:46 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:46 +0100
+
+
+Started POST "/create_day" for 127.0.0.1 at 2014-10-12 08:03:47 +0100
+Processing by DaysController#create as HTML
+  Parameters: {"authenticity_token"=>"DO6hEi7NrcIIwP6cbmoObhuJPCvO4rbXj8fe1pTca6Q="}
+  [1m[35mDay Load (0.2ms)[0m  SELECT  "days".* FROM "days"   ORDER BY "days"."id" DESC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "days".* FROM "days"   ORDER BY "days"."id" DESC LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mStaff Load (0.1ms)[0m  [1mSELECT "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mStaff Load (0.1ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ? AND "staffs"."id" = ? LIMIT 1  [["user_id", 1], ["id", 2]]
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT "customers".* FROM "customers"  WHERE "customers"."staff_id" = ?[0m  [["staff_id", 2]]
+  [1m[35mStaff Load (0.0ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ? AND "staffs"."id" = ? LIMIT 1  [["user_id", 1], ["id", 4]]
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT "customers".* FROM "customers"  WHERE "customers"."staff_id" = ?[0m  [["staff_id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "users" SET "money" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["money", 43258], ["updated_at", "2014-10-12 07:03:47.608421"]]
+  [1m[35m (155.4ms)[0m  commit transaction
+  [1m[36mStaff Load (0.1ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "staffs" SET "performance" = ?, "updated_at" = ? WHERE "staffs"."id" = 2[0m  [["performance", 6], ["updated_at", "2014-10-12 07:03:47.766159"]]
+  [1m[35m (237.1ms)[0m  commit transaction
+  [1m[36mStaff Load (0.1ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "staffs" SET "performance" = ?, "updated_at" = ? WHERE "staffs"."id" = 4[0m  [["performance", 5], ["updated_at", "2014-10-12 07:03:48.005075"]]
+  [1m[35m (121.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "days" ("average_productivity", "average_staff_happiness", "created_at", "day_number", "expenses", "income", "money", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["average_productivity", 5], ["average_staff_happiness", 70], ["created_at", "2014-10-12 07:03:48.127815"], ["day_number", 59], ["expenses", 1324], ["income", 3000], ["money", 43258], ["updated_at", "2014-10-12 07:03:48.127815"], ["user_id", 1]]
+  [1m[36m (382.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 910ms (ActiveRecord: 897.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-12 08:03:48 +0100
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+Processing by LoggedInController#user_log_in as HTML
+  [1m[36mStaff Load (0.1ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ? LIMIT 5 OFFSET 0[0m  [["user_id", 1]]
+  [1m[35mCustomer Load (0.1ms)[0m  SELECT  "customers".* FROM "customers" INNER JOIN "staffs" ON "customers"."staff_id" = "staffs"."id" WHERE "staffs"."user_id" = ? LIMIT 5 OFFSET 0  [["user_id", 1]]
+  [1m[36mStaff Load (0.1ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered logged_in/user_log_in.html.erb within layouts/application (3.1ms)
+  Rendered layouts/_navigation.html.erb (0.4ms)
+  Rendered layouts/_left_pane.html.erb (0.0ms)
+  Rendered layouts/_right_pane.html.erb (0.0ms)
+Completed 200 OK in 175ms (Views: 173.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/combine_all.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:48 +0100
+
+
+Started GET "/assets/customers.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:48 +0100
+
+
+Started GET "/assets/events_decisions/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:48 +0100
+
+
+Started GET "/assets/days.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:48 +0100
+
+
+Started GET "/assets/events_decisions/maincss.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:48 +0100
+
+
+Started GET "/assets/devise_forms.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:48 +0100
+
+
+Started GET "/assets/maincss.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:48 +0100
+
+
+Started GET "/assets/registrations.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:48 +0100
+
+
+Started GET "/assets/staffs.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:48 +0100
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:48 +0100
+
+
+Started GET "/assets/user_logged.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:48 +0100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:48 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:48 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:48 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:48 +0100
+
+
+Started GET "/assets/canvasjs.min.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:48 +0100
+
+
+Started GET "/assets/chart_functions.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:48 +0100
+
+
+Started GET "/assets/customers.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:48 +0100
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2014-10-12 08:03:48 +0100
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2014-10-12 08:03:48 +0100
+
+
+Started GET "/assets/days.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:48 +0100
+
+
+Started GET "/assets/jquery.easytabs.min.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:48 +0100
+
+
+Started GET "/assets/logged_in.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:48 +0100
+
+
+Started GET "/assets/mainscript.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:48 +0100
+
+
+Started GET "/assets/pagination.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:48 +0100
+
+
+Started GET "/assets/registrations.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:48 +0100
+
+
+Started GET "/assets/staffs.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:48 +0100
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:48 +0100
+
+
+Started GET "/assets/traits.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:48 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:48 +0100
+
+
+Started POST "/create_day" for 127.0.0.1 at 2014-10-12 08:03:49 +0100
+Processing by DaysController#create as HTML
+  Parameters: {"authenticity_token"=>"DO6hEi7NrcIIwP6cbmoObhuJPCvO4rbXj8fe1pTca6Q="}
+  [1m[35mDay Load (0.2ms)[0m  SELECT  "days".* FROM "days"   ORDER BY "days"."id" DESC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "days".* FROM "days"   ORDER BY "days"."id" DESC LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mStaff Load (0.1ms)[0m  [1mSELECT "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mStaff Load (0.1ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ? AND "staffs"."id" = ? LIMIT 1  [["user_id", 1], ["id", 2]]
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT "customers".* FROM "customers"  WHERE "customers"."staff_id" = ?[0m  [["staff_id", 2]]
+  [1m[35mStaff Load (0.0ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ? AND "staffs"."id" = ? LIMIT 1  [["user_id", 1], ["id", 4]]
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT "customers".* FROM "customers"  WHERE "customers"."staff_id" = ?[0m  [["staff_id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "users" SET "money" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["money", 44958], ["updated_at", "2014-10-12 07:03:49.959140"]]
+  [1m[35m (113.7ms)[0m  commit transaction
+  [1m[36mStaff Load (0.2ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mStaff Load (0.1ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "days" ("average_productivity", "average_staff_happiness", "created_at", "day_number", "expenses", "income", "money", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["average_productivity", 5], ["average_staff_happiness", 70], ["created_at", "2014-10-12 07:03:50.080922"], ["day_number", 60], ["expenses", 1401], ["income", 3000], ["money", 44958], ["updated_at", "2014-10-12 07:03:50.080922"], ["user_id", 1]]
+  [1m[36m (135.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 269ms (ActiveRecord: 251.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-12 08:03:50 +0100
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+Processing by LoggedInController#user_log_in as HTML
+  [1m[36mStaff Load (0.2ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ? LIMIT 5 OFFSET 0[0m  [["user_id", 1]]
+  [1m[35mCustomer Load (0.1ms)[0m  SELECT  "customers".* FROM "customers" INNER JOIN "staffs" ON "customers"."staff_id" = "staffs"."id" WHERE "staffs"."user_id" = ? LIMIT 5 OFFSET 0  [["user_id", 1]]
+  [1m[36mStaff Load (0.1ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered logged_in/user_log_in.html.erb within layouts/application (5.7ms)
+  Rendered layouts/_navigation.html.erb (0.4ms)
+  Rendered layouts/_left_pane.html.erb (0.0ms)
+  Rendered layouts/_right_pane.html.erb (0.0ms)
+Completed 200 OK in 168ms (Views: 166.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/combine_all.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:50 +0100
+
+
+Started GET "/assets/devise_forms.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:50 +0100
+
+
+Started GET "/assets/customers.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:50 +0100
+
+
+Started GET "/assets/days.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:50 +0100
+
+
+Started GET "/assets/events_decisions/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:50 +0100
+
+
+Started GET "/assets/events_decisions/maincss.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:50 +0100
+
+
+Started GET "/assets/maincss.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:50 +0100
+
+
+Started GET "/assets/registrations.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:50 +0100
+
+
+Started GET "/assets/staffs.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:50 +0100
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:50 +0100
+
+
+Started GET "/assets/user_logged.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:50 +0100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:50 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:50 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:50 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:50 +0100
+
+
+Started GET "/assets/canvasjs.min.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:50 +0100
+
+
+Started GET "/assets/chart_functions.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:50 +0100
+
+
+Started GET "/assets/customers.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:50 +0100
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2014-10-12 08:03:50 +0100
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2014-10-12 08:03:50 +0100
+
+
+Started GET "/assets/days.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:50 +0100
+
+
+Started GET "/assets/jquery.easytabs.min.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:50 +0100
+
+
+Started GET "/assets/logged_in.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:50 +0100
+
+
+Started GET "/assets/mainscript.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:50 +0100
+
+
+Started GET "/assets/pagination.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:50 +0100
+
+
+Started GET "/assets/registrations.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:50 +0100
+
+
+Started GET "/assets/staffs.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:50 +0100
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:50 +0100
+
+
+Started GET "/assets/traits.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:50 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:50 +0100
+
+
+Started POST "/create_day" for 127.0.0.1 at 2014-10-12 08:03:52 +0100
+Processing by DaysController#create as HTML
+  Parameters: {"authenticity_token"=>"DO6hEi7NrcIIwP6cbmoObhuJPCvO4rbXj8fe1pTca6Q="}
+  [1m[35mDay Load (0.2ms)[0m  SELECT  "days".* FROM "days"   ORDER BY "days"."id" DESC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "days".* FROM "days"   ORDER BY "days"."id" DESC LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mStaff Load (0.1ms)[0m  [1mSELECT "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mStaff Load (0.1ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ? AND "staffs"."id" = ? LIMIT 1  [["user_id", 1], ["id", 2]]
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT "customers".* FROM "customers"  WHERE "customers"."staff_id" = ?[0m  [["staff_id", 2]]
+  [1m[35mStaff Load (0.1ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ? AND "staffs"."id" = ? LIMIT 1  [["user_id", 1], ["id", 4]]
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT "customers".* FROM "customers"  WHERE "customers"."staff_id" = ?[0m  [["staff_id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "users" SET "money" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["money", 46792], ["updated_at", "2014-10-12 07:03:52.263886"]]
+  [1m[35m (118.6ms)[0m  commit transaction
+  [1m[36mStaff Load (0.1ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "staffs" SET "performance" = ?, "updated_at" = ? WHERE "staffs"."id" = 2[0m  [["performance", 7], ["updated_at", "2014-10-12 07:03:52.385352"]]
+  [1m[35m (120.1ms)[0m  commit transaction
+  [1m[36mStaff Load (0.1ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "staffs" SET "performance" = ?, "updated_at" = ? WHERE "staffs"."id" = 4[0m  [["performance", 7], ["updated_at", "2014-10-12 07:03:52.507951"]]
+  [1m[35m (120.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "days" ("average_productivity", "average_staff_happiness", "created_at", "day_number", "expenses", "income", "money", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["average_productivity", 7], ["average_staff_happiness", 70], ["created_at", "2014-10-12 07:03:52.631942"], ["day_number", 61], ["expenses", 1197], ["income", 3000], ["money", 46792], ["updated_at", "2014-10-12 07:03:52.631942"], ["user_id", 1]]
+  [1m[36m (107.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 489ms (ActiveRecord: 469.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-12 08:03:52 +0100
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+Processing by LoggedInController#user_log_in as HTML
+  [1m[36mStaff Load (0.1ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ? LIMIT 5 OFFSET 0[0m  [["user_id", 1]]
+  [1m[35mCustomer Load (0.1ms)[0m  SELECT  "customers".* FROM "customers" INNER JOIN "staffs" ON "customers"."staff_id" = "staffs"."id" WHERE "staffs"."user_id" = ? LIMIT 5 OFFSET 0  [["user_id", 1]]
+  [1m[36mStaff Load (0.1ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered logged_in/user_log_in.html.erb within layouts/application (5.7ms)
+  Rendered layouts/_navigation.html.erb (0.3ms)
+  Rendered layouts/_left_pane.html.erb (0.0ms)
+  Rendered layouts/_right_pane.html.erb (0.0ms)
+Completed 200 OK in 170ms (Views: 167.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/combine_all.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:53 +0100
+
+
+Started GET "/assets/customers.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:53 +0100
+
+
+Started GET "/assets/days.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:53 +0100
+
+
+Started GET "/assets/devise_forms.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:53 +0100
+
+
+Started GET "/assets/events_decisions/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:53 +0100
+
+
+Started GET "/assets/events_decisions/maincss.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:53 +0100
+
+
+Started GET "/assets/maincss.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:53 +0100
+
+
+Started GET "/assets/registrations.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:53 +0100
+
+
+Started GET "/assets/staffs.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:53 +0100
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:53 +0100
+
+
+Started GET "/assets/user_logged.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:53 +0100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:53 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:53 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:53 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:53 +0100
+
+
+Started GET "/assets/canvasjs.min.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:53 +0100
+
+
+Started GET "/assets/chart_functions.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:53 +0100
+
+
+Started GET "/assets/customers.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:53 +0100
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2014-10-12 08:03:53 +0100
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2014-10-12 08:03:53 +0100
+
+
+Started GET "/assets/days.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:53 +0100
+
+
+Started GET "/assets/jquery.easytabs.min.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:53 +0100
+
+
+Started GET "/assets/logged_in.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:53 +0100
+
+
+Started GET "/assets/mainscript.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:53 +0100
+
+
+Started GET "/assets/pagination.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:53 +0100
+
+
+Started GET "/assets/registrations.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:53 +0100
+
+
+Started GET "/assets/staffs.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:53 +0100
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:53 +0100
+
+
+Started GET "/assets/traits.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:53 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:53 +0100
+
+
+Started POST "/create_day" for 127.0.0.1 at 2014-10-12 08:03:53 +0100
+Processing by DaysController#create as HTML
+  Parameters: {"authenticity_token"=>"DO6hEi7NrcIIwP6cbmoObhuJPCvO4rbXj8fe1pTca6Q="}
+  [1m[35mDay Load (0.4ms)[0m  SELECT  "days".* FROM "days"   ORDER BY "days"."id" DESC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "days".* FROM "days"   ORDER BY "days"."id" DESC LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mStaff Load (0.1ms)[0m  [1mSELECT "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mStaff Load (0.1ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ? AND "staffs"."id" = ? LIMIT 1  [["user_id", 1], ["id", 2]]
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT "customers".* FROM "customers"  WHERE "customers"."staff_id" = ?[0m  [["staff_id", 2]]
+  [1m[35mStaff Load (0.1ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ? AND "staffs"."id" = ? LIMIT 1  [["user_id", 1], ["id", 4]]
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT "customers".* FROM "customers"  WHERE "customers"."staff_id" = ?[0m  [["staff_id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "money" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["money", 48519], ["updated_at", "2014-10-12 07:03:53.872120"]]
+  [1m[35m (133.8ms)[0m  commit transaction
+  [1m[36mStaff Load (0.1ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "staffs" SET "performance" = ?, "updated_at" = ? WHERE "staffs"."id" = 2[0m  [["performance", 6], ["updated_at", "2014-10-12 07:03:54.008441"]]
+  [1m[35m (221.1ms)[0m  commit transaction
+  [1m[36mStaff Load (0.1ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "staffs" SET "performance" = ?, "updated_at" = ? WHERE "staffs"."id" = 4[0m  [["performance", 5], ["updated_at", "2014-10-12 07:03:54.231486"]]
+  [1m[35m (110.2ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "days" ("average_productivity", "average_staff_happiness", "created_at", "day_number", "expenses", "income", "money", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["average_productivity", 5], ["average_staff_happiness", 70], ["created_at", "2014-10-12 07:03:54.344297"], ["day_number", 62], ["expenses", 1282], ["income", 3000], ["money", 48519], ["updated_at", "2014-10-12 07:03:54.344297"], ["user_id", 1]]
+  [1m[36m (109.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 594ms (ActiveRecord: 576.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-12 08:03:54 +0100
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+Processing by LoggedInController#user_log_in as HTML
+  [1m[36mStaff Load (0.1ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ? LIMIT 5 OFFSET 0[0m  [["user_id", 1]]
+  [1m[35mCustomer Load (0.1ms)[0m  SELECT  "customers".* FROM "customers" INNER JOIN "staffs" ON "customers"."staff_id" = "staffs"."id" WHERE "staffs"."user_id" = ? LIMIT 5 OFFSET 0  [["user_id", 1]]
+  [1m[36mStaff Load (0.1ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered logged_in/user_log_in.html.erb within layouts/application (4.7ms)
+  Rendered layouts/_navigation.html.erb (0.4ms)
+  Rendered layouts/_left_pane.html.erb (0.0ms)
+  Rendered layouts/_right_pane.html.erb (0.0ms)
+Completed 200 OK in 162ms (Views: 161.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/customers.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:54 +0100
+
+
+Started GET "/assets/combine_all.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:54 +0100
+
+
+Started GET "/assets/events_decisions/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:54 +0100
+
+
+Started GET "/assets/days.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:54 +0100
+
+
+Started GET "/assets/events_decisions/maincss.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:54 +0100
+
+
+Started GET "/assets/devise_forms.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:54 +0100
+
+
+Started GET "/assets/maincss.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:54 +0100
+
+
+Started GET "/assets/registrations.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:54 +0100
+
+
+Started GET "/assets/staffs.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:54 +0100
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:54 +0100
+
+
+Started GET "/assets/user_logged.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:54 +0100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:54 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:54 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:54 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:54 +0100
+
+
+Started GET "/assets/canvasjs.min.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:54 +0100
+
+
+Started GET "/assets/chart_functions.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:54 +0100
+
+
+Started GET "/assets/customers.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:54 +0100
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2014-10-12 08:03:54 +0100
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2014-10-12 08:03:54 +0100
+
+
+Started GET "/assets/days.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:54 +0100
+
+
+Started GET "/assets/jquery.easytabs.min.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:54 +0100
+
+
+Started GET "/assets/logged_in.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:54 +0100
+
+
+Started GET "/assets/mainscript.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:54 +0100
+
+
+Started GET "/assets/pagination.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:54 +0100
+
+
+Started GET "/assets/registrations.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:54 +0100
+
+
+Started GET "/assets/staffs.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:54 +0100
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:54 +0100
+
+
+Started GET "/assets/traits.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:54 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:54 +0100
+
+
+Started POST "/create_day" for 127.0.0.1 at 2014-10-12 08:03:55 +0100
+Processing by DaysController#create as HTML
+  Parameters: {"authenticity_token"=>"DO6hEi7NrcIIwP6cbmoObhuJPCvO4rbXj8fe1pTca6Q="}
+  [1m[35mDay Load (0.2ms)[0m  SELECT  "days".* FROM "days"   ORDER BY "days"."id" DESC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "days".* FROM "days"   ORDER BY "days"."id" DESC LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mStaff Load (0.1ms)[0m  [1mSELECT "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mStaff Load (0.1ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ? AND "staffs"."id" = ? LIMIT 1  [["user_id", 1], ["id", 2]]
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT "customers".* FROM "customers"  WHERE "customers"."staff_id" = ?[0m  [["staff_id", 2]]
+  [1m[35mStaff Load (0.1ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ? AND "staffs"."id" = ? LIMIT 1  [["user_id", 1], ["id", 4]]
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT "customers".* FROM "customers"  WHERE "customers"."staff_id" = ?[0m  [["staff_id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "money" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["money", 50232], ["updated_at", "2014-10-12 07:03:55.555470"]]
+  [1m[35m (142.4ms)[0m  commit transaction
+  [1m[36mStaff Load (0.2ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "staffs" SET "performance" = ?, "updated_at" = ? WHERE "staffs"."id" = 2[0m  [["performance", 7], ["updated_at", "2014-10-12 07:03:55.702406"]]
+  [1m[35m (241.4ms)[0m  commit transaction
+  [1m[36mStaff Load (0.1ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "days" ("average_productivity", "average_staff_happiness", "created_at", "day_number", "expenses", "income", "money", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["average_productivity", 6], ["average_staff_happiness", 70], ["created_at", "2014-10-12 07:03:55.947265"], ["day_number", 63], ["expenses", 1581], ["income", 3000], ["money", 50232], ["updated_at", "2014-10-12 07:03:55.947265"], ["user_id", 1]]
+  [1m[35m (108.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 511ms (ActiveRecord: 494.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-12 08:03:56 +0100
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+Processing by LoggedInController#user_log_in as HTML
+  [1m[35mStaff Load (0.1ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ? LIMIT 5 OFFSET 0  [["user_id", 1]]
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT  "customers".* FROM "customers" INNER JOIN "staffs" ON "customers"."staff_id" = "staffs"."id" WHERE "staffs"."user_id" = ? LIMIT 5 OFFSET 0[0m  [["user_id", 1]]
+  [1m[35mStaff Load (0.1ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered logged_in/user_log_in.html.erb within layouts/application (4.1ms)
+  Rendered layouts/_navigation.html.erb (0.3ms)
+  Rendered layouts/_left_pane.html.erb (0.0ms)
+  Rendered layouts/_right_pane.html.erb (0.0ms)
+Completed 200 OK in 166ms (Views: 163.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/combine_all.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:56 +0100
+
+
+Started GET "/assets/days.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:56 +0100
+
+
+Started GET "/assets/customers.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:56 +0100
+
+
+Started GET "/assets/events_decisions/maincss.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:56 +0100
+
+
+Started GET "/assets/devise_forms.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:56 +0100
+
+
+Started GET "/assets/events_decisions/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:56 +0100
+
+
+Started GET "/assets/maincss.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:56 +0100
+
+
+Started GET "/assets/registrations.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:56 +0100
+
+
+Started GET "/assets/staffs.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:56 +0100
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:56 +0100
+
+
+Started GET "/assets/user_logged.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:56 +0100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-12 08:03:56 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:56 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:56 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:56 +0100
+
+
+Started GET "/assets/canvasjs.min.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:56 +0100
+
+
+Started GET "/assets/chart_functions.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:56 +0100
+
+
+Started GET "/assets/customers.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:56 +0100
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2014-10-12 08:03:56 +0100
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2014-10-12 08:03:56 +0100
+
+
+Started GET "/assets/days.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:56 +0100
+
+
+Started GET "/assets/jquery.easytabs.min.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:56 +0100
+
+
+Started GET "/assets/logged_in.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:56 +0100
+
+
+Started GET "/assets/mainscript.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:56 +0100
+
+
+Started GET "/assets/pagination.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:56 +0100
+
+
+Started GET "/assets/registrations.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:56 +0100
+
+
+Started GET "/assets/staffs.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:56 +0100
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:56 +0100
+
+
+Started GET "/assets/traits.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:56 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-12 08:03:56 +0100
+
+
+Started GET "/customers/3" for 127.0.0.1 at 2014-10-12 08:08:22 +0100
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCustomer Load (0.1ms)[0m  SELECT  "customers".* FROM "customers" INNER JOIN "staffs" ON "customers"."staff_id" = "staffs"."id" WHERE "staffs"."user_id" = ? AND "customers"."id" = ? LIMIT 1  [["user_id", 1], ["id", 3]]
+  [1m[36mStaff Load (0.1ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered customers/show.html.erb within layouts/application (6.4ms)
+  Rendered layouts/_navigation.html.erb (0.4ms)
+  Rendered layouts/_left_pane.html.erb (0.0ms)
+  Rendered layouts/_right_pane.html.erb (0.0ms)
+Completed 200 OK in 181ms (Views: 160.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/staffs/4" for 127.0.0.1 at 2014-10-12 08:08:23 +0100
+Processing by StaffsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mStaff Load (0.3ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ? AND "staffs"."id" = ? LIMIT 1[0m  [["user_id", 1], ["id", 4]]
+  [1m[35mCustomer Load (0.2ms)[0m  SELECT "customers".* FROM "customers"  WHERE "customers"."staff_id" = ?  [["staff_id", 4]]
+  Rendered staffs/show.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_navigation.html.erb (0.3ms)
+  Rendered layouts/_left_pane.html.erb (0.0ms)
+  Rendered layouts/_right_pane.html.erb (0.0ms)
+Completed 200 OK in 206ms (Views: 198.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-12 08:08:24 +0100
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+Processing by LoggedInController#user_log_in as HTML
+  [1m[35mStaff Load (0.4ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ? LIMIT 5 OFFSET 0  [["user_id", 1]]
+  [1m[36mCustomer Load (0.3ms)[0m  [1mSELECT  "customers".* FROM "customers" INNER JOIN "staffs" ON "customers"."staff_id" = "staffs"."id" WHERE "staffs"."user_id" = ? LIMIT 5 OFFSET 0[0m  [["user_id", 1]]
+  [1m[35mStaff Load (0.1ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered logged_in/user_log_in.html.erb within layouts/application (7.5ms)
+  Rendered layouts/_navigation.html.erb (0.3ms)
+  Rendered layouts/_left_pane.html.erb (0.0ms)
+  Rendered layouts/_right_pane.html.erb (0.0ms)
+Completed 200 OK in 170ms (Views: 165.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-12 08:08:30 +0100
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+Processing by LoggedInController#user_log_in as HTML
+  [1m[35mStaff Load (0.1ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ? LIMIT 5 OFFSET 0  [["user_id", 1]]
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT  "customers".* FROM "customers" INNER JOIN "staffs" ON "customers"."staff_id" = "staffs"."id" WHERE "staffs"."user_id" = ? LIMIT 5 OFFSET 0[0m  [["user_id", 1]]
+  [1m[35mStaff Load (0.1ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered logged_in/user_log_in.html.erb within layouts/application (4.0ms)
+  Rendered layouts/_navigation.html.erb (0.2ms)
+  Rendered layouts/_left_pane.html.erb (0.0ms)
+  Rendered layouts/_right_pane.html.erb (0.0ms)
+Completed 200 OK in 180ms (Views: 178.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/combine_all.css?body=1" for 127.0.0.1 at 2014-10-12 08:08:30 +0100
+
+
+Started GET "/assets/customers.css?body=1" for 127.0.0.1 at 2014-10-12 08:08:30 +0100
+
+
+Started GET "/assets/devise_forms.css?body=1" for 127.0.0.1 at 2014-10-12 08:08:30 +0100
+
+
+Started GET "/assets/days.css?body=1" for 127.0.0.1 at 2014-10-12 08:08:30 +0100
+
+
+Started GET "/assets/events_decisions/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-10-12 08:08:30 +0100
+
+
+Started GET "/assets/registrations.css?body=1" for 127.0.0.1 at 2014-10-12 08:08:30 +0100
+
+
+Started GET "/assets/events_decisions/maincss.css?body=1" for 127.0.0.1 at 2014-10-12 08:08:30 +0100
+
+
+Started GET "/assets/maincss.css?body=1" for 127.0.0.1 at 2014-10-12 08:08:30 +0100
+
+
+Started GET "/assets/staffs.css?body=1" for 127.0.0.1 at 2014-10-12 08:08:30 +0100
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2014-10-12 08:08:30 +0100
+
+
+Started GET "/assets/user_logged.css?body=1" for 127.0.0.1 at 2014-10-12 08:08:30 +0100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-12 08:08:30 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-12 08:08:30 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-12 08:08:30 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-12 08:08:30 +0100
+
+
+Started GET "/assets/canvasjs.min.js?body=1" for 127.0.0.1 at 2014-10-12 08:08:30 +0100
+
+
+Started GET "/assets/chart_functions.js?body=1" for 127.0.0.1 at 2014-10-12 08:08:30 +0100
+
+
+Started GET "/assets/customers.js?body=1" for 127.0.0.1 at 2014-10-12 08:08:30 +0100
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2014-10-12 08:08:30 +0100
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2014-10-12 08:08:30 +0100
+
+
+Started GET "/assets/days.js?body=1" for 127.0.0.1 at 2014-10-12 08:08:30 +0100
+
+
+Started GET "/assets/jquery.easytabs.min.js?body=1" for 127.0.0.1 at 2014-10-12 08:08:30 +0100
+
+
+Started GET "/assets/logged_in.js?body=1" for 127.0.0.1 at 2014-10-12 08:08:30 +0100
+
+
+Started GET "/assets/mainscript.js?body=1" for 127.0.0.1 at 2014-10-12 08:08:30 +0100
+
+
+Started GET "/assets/pagination.js?body=1" for 127.0.0.1 at 2014-10-12 08:08:30 +0100
+
+
+Started GET "/assets/registrations.js?body=1" for 127.0.0.1 at 2014-10-12 08:08:30 +0100
+
+
+Started GET "/assets/staffs.js?body=1" for 127.0.0.1 at 2014-10-12 08:08:30 +0100
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2014-10-12 08:08:30 +0100
+
+
+Started GET "/assets/traits.js?body=1" for 127.0.0.1 at 2014-10-12 08:08:30 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-12 08:08:30 +0100
+
+
+Started GET "/days" for 127.0.0.1 at 2014-10-12 08:08:31 +0100
+Processing by DaysController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mDay Load (0.3ms)[0m  SELECT "days".* FROM "days"  WHERE "days"."user_id" = ?  [["user_id", 1]]
+Completed 200 OK in 71ms (Views: 65.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/days" for 127.0.0.1 at 2014-10-12 08:08:32 +0100
+Processing by DaysController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mDay Load (0.4ms)[0m  SELECT "days".* FROM "days"  WHERE "days"."user_id" = ?  [["user_id", 1]]
+Completed 200 OK in 16ms (Views: 13.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/days" for 127.0.0.1 at 2014-10-12 08:08:34 +0100
+Processing by DaysController#index as */*
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mDay Load (0.6ms)[0m  SELECT "days".* FROM "days"  WHERE "days"."user_id" = ?  [["user_id", 1]]
+Completed 200 OK in 20ms (Views: 16.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/days" for 127.0.0.1 at 2014-10-12 08:08:35 +0100
+Processing by DaysController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mDay Load (0.6ms)[0m  SELECT "days".* FROM "days"  WHERE "days"."user_id" = ?  [["user_id", 1]]
+Completed 200 OK in 25ms (Views: 21.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/days" for 127.0.0.1 at 2014-10-12 08:08:37 +0100
+Processing by DaysController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mDay Load (0.5ms)[0m  SELECT "days".* FROM "days"  WHERE "days"."user_id" = ?  [["user_id", 1]]
+Completed 200 OK in 20ms (Views: 17.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/days" for 127.0.0.1 at 2014-10-12 08:08:38 +0100
+Processing by DaysController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mDay Load (0.2ms)[0m  SELECT "days".* FROM "days"  WHERE "days"."user_id" = ?  [["user_id", 1]]
+Completed 200 OK in 13ms (Views: 11.5ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/create_day" for 127.0.0.1 at 2014-10-12 08:08:40 +0100
+Processing by DaysController#create as HTML
+  Parameters: {"authenticity_token"=>"DO6hEi7NrcIIwP6cbmoObhuJPCvO4rbXj8fe1pTca6Q="}
+  [1m[36mDay Load (0.1ms)[0m  [1mSELECT  "days".* FROM "days"   ORDER BY "days"."id" DESC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "days".* FROM "days"   ORDER BY "days"."id" DESC LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mStaff Load (0.4ms)[0m  SELECT "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ?  [["user_id", 1]]
+  [1m[36mStaff Load (0.1ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ? AND "staffs"."id" = ? LIMIT 1[0m  [["user_id", 1], ["id", 2]]
+  [1m[35mCustomer Load (0.1ms)[0m  SELECT "customers".* FROM "customers"  WHERE "customers"."staff_id" = ?  [["staff_id", 2]]
+  [1m[36mStaff Load (0.1ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ? AND "staffs"."id" = ? LIMIT 1[0m  [["user_id", 1], ["id", 4]]
+  [1m[35mCustomer Load (0.1ms)[0m  SELECT "customers".* FROM "customers"  WHERE "customers"."staff_id" = ?  [["staff_id", 4]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "money" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["money", 51717], ["updated_at", "2014-10-12 07:08:40.913324"]]
+  [1m[36m (103.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mStaff Load (0.1ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mStaff Load (0.1ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "staffs" SET "performance" = ?, "updated_at" = ? WHERE "staffs"."id" = 4[0m  [["performance", 8], ["updated_at", "2014-10-12 07:08:41.021181"]]
+  [1m[35m (131.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "days" ("average_productivity", "average_staff_happiness", "created_at", "day_number", "expenses", "income", "money", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["average_productivity", 7], ["average_staff_happiness", 70], ["created_at", "2014-10-12 07:08:41.155833"], ["day_number", 64], ["expenses", 1495], ["income", 3000], ["money", 51717], ["updated_at", "2014-10-12 07:08:41.155833"], ["user_id", 1]]
+  [1m[36m (409.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 667ms (ActiveRecord: 646.5ms)
+
+
+Started POST "/create_day" for 127.0.0.1 at 2014-10-12 08:08:41 +0100
+Processing by DaysController#create as HTML
+  Parameters: {"authenticity_token"=>"DO6hEi7NrcIIwP6cbmoObhuJPCvO4rbXj8fe1pTca6Q="}
+  [1m[35mDay Load (0.3ms)[0m  SELECT  "days".* FROM "days"   ORDER BY "days"."id" DESC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "days".* FROM "days"   ORDER BY "days"."id" DESC LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mStaff Load (0.1ms)[0m  [1mSELECT "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mStaff Load (0.1ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ? AND "staffs"."id" = ? LIMIT 1  [["user_id", 1], ["id", 2]]
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT "customers".* FROM "customers"  WHERE "customers"."staff_id" = ?[0m  [["staff_id", 2]]
+  [1m[35mStaff Load (0.1ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ? AND "staffs"."id" = ? LIMIT 1  [["user_id", 1], ["id", 4]]
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT "customers".* FROM "customers"  WHERE "customers"."staff_id" = ?[0m  [["staff_id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "money" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["money", 53522], ["updated_at", "2014-10-12 07:08:41.593257"]]
+  [1m[35m (137.7ms)[0m  commit transaction
+  [1m[36mStaff Load (0.1ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "staffs" SET "performance" = ?, "updated_at" = ? WHERE "staffs"."id" = 2[0m  [["performance", 8], ["updated_at", "2014-10-12 07:08:41.734578"]]
+  [1m[35m (143.1ms)[0m  commit transaction
+  [1m[36mStaff Load (0.2ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "staffs" SET "performance" = ?, "updated_at" = ? WHERE "staffs"."id" = 4[0m  [["performance", 6], ["updated_at", "2014-10-12 07:08:41.883745"]]
+  [1m[35m (149.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "days" ("average_productivity", "average_staff_happiness", "created_at", "day_number", "expenses", "income", "money", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["average_productivity", 7], ["average_staff_happiness", 70], ["created_at", "2014-10-12 07:08:42.042389"], ["day_number", 65], ["expenses", 1245], ["income", 3000], ["money", 53522], ["updated_at", "2014-10-12 07:08:42.042389"], ["user_id", 1]]
+  [1m[36m (148.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 613ms (ActiveRecord: 581.3ms)
+
+
+Started POST "/create_day" for 127.0.0.1 at 2014-10-12 08:08:42 +0100
+Processing by DaysController#create as HTML
+  Parameters: {"authenticity_token"=>"DO6hEi7NrcIIwP6cbmoObhuJPCvO4rbXj8fe1pTca6Q="}
+  [1m[35mDay Load (0.1ms)[0m  SELECT  "days".* FROM "days"   ORDER BY "days"."id" DESC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "days".* FROM "days"   ORDER BY "days"."id" DESC LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mStaff Load (0.1ms)[0m  [1mSELECT "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mStaff Load (0.1ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ? AND "staffs"."id" = ? LIMIT 1  [["user_id", 1], ["id", 2]]
+  [1m[36mCustomer Load (0.2ms)[0m  [1mSELECT "customers".* FROM "customers"  WHERE "customers"."staff_id" = ?[0m  [["staff_id", 2]]
+  [1m[35mStaff Load (0.1ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ? AND "staffs"."id" = ? LIMIT 1  [["user_id", 1], ["id", 4]]
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT "customers".* FROM "customers"  WHERE "customers"."staff_id" = ?[0m  [["staff_id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "money" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["money", 55260], ["updated_at", "2014-10-12 07:08:42.205744"]]
+  [1m[35m (131.5ms)[0m  commit transaction
+  [1m[36mStaff Load (0.2ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "staffs" SET "performance" = ?, "updated_at" = ? WHERE "staffs"."id" = 2[0m  [["performance", 4], ["updated_at", "2014-10-12 07:08:42.342271"]]
+  [1m[35m (118.4ms)[0m  commit transaction
+  [1m[36mStaff Load (0.2ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "staffs" SET "performance" = ?, "updated_at" = ? WHERE "staffs"."id" = 4[0m  [["performance", 5], ["updated_at", "2014-10-12 07:08:42.468334"]]
+  [1m[35m (126.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "days" ("average_productivity", "average_staff_happiness", "created_at", "day_number", "expenses", "income", "money", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["average_productivity", 4], ["average_staff_happiness", 70], ["created_at", "2014-10-12 07:08:42.597867"], ["day_number", 66], ["expenses", 1402], ["income", 3000], ["money", 55260], ["updated_at", "2014-10-12 07:08:42.597867"], ["user_id", 1]]
+  [1m[36m (118.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 522ms (ActiveRecord: 497.9ms)
+
+
+Started POST "/create_day" for 127.0.0.1 at 2014-10-12 08:08:42 +0100
+Processing by DaysController#create as HTML
+  Parameters: {"authenticity_token"=>"DO6hEi7NrcIIwP6cbmoObhuJPCvO4rbXj8fe1pTca6Q="}
+  [1m[35mDay Load (0.2ms)[0m  SELECT  "days".* FROM "days"   ORDER BY "days"."id" DESC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "days".* FROM "days"   ORDER BY "days"."id" DESC LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mStaff Load (0.1ms)[0m  [1mSELECT "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mStaff Load (0.0ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ? AND "staffs"."id" = ? LIMIT 1  [["user_id", 1], ["id", 2]]
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT "customers".* FROM "customers"  WHERE "customers"."staff_id" = ?[0m  [["staff_id", 2]]
+  [1m[35mStaff Load (0.0ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ? AND "staffs"."id" = ? LIMIT 1  [["user_id", 1], ["id", 4]]
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT "customers".* FROM "customers"  WHERE "customers"."staff_id" = ?[0m  [["staff_id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "money" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["money", 56802], ["updated_at", "2014-10-12 07:08:42.734585"]]
+  [1m[35m (127.7ms)[0m  commit transaction
+  [1m[36mStaff Load (0.1ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "staffs" SET "performance" = ?, "updated_at" = ? WHERE "staffs"."id" = 2[0m  [["performance", 7], ["updated_at", "2014-10-12 07:08:42.864511"]]
+  [1m[35m (121.8ms)[0m  commit transaction
+  [1m[36mStaff Load (0.1ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "staffs" SET "performance" = ?, "updated_at" = ? WHERE "staffs"."id" = 4[0m  [["performance", 9], ["updated_at", "2014-10-12 07:08:42.988256"]]
+  [1m[35m (121.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "days" ("average_productivity", "average_staff_happiness", "created_at", "day_number", "expenses", "income", "money", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["average_productivity", 8], ["average_staff_happiness", 70], ["created_at", "2014-10-12 07:08:43.110820"], ["day_number", 67], ["expenses", 1244], ["income", 3000], ["money", 56802], ["updated_at", "2014-10-12 07:08:43.110820"], ["user_id", 1]]
+  [1m[36m (110.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 495ms (ActiveRecord: 482.7ms)
+
+
+Started POST "/create_day" for 127.0.0.1 at 2014-10-12 08:08:43 +0100
+Processing by DaysController#create as HTML
+  Parameters: {"authenticity_token"=>"DO6hEi7NrcIIwP6cbmoObhuJPCvO4rbXj8fe1pTca6Q="}
+  [1m[35mDay Load (0.2ms)[0m  SELECT  "days".* FROM "days"   ORDER BY "days"."id" DESC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "days".* FROM "days"   ORDER BY "days"."id" DESC LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mStaff Load (0.1ms)[0m  [1mSELECT "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mStaff Load (0.1ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ? AND "staffs"."id" = ? LIMIT 1  [["user_id", 1], ["id", 2]]
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT "customers".* FROM "customers"  WHERE "customers"."staff_id" = ?[0m  [["staff_id", 2]]
+  [1m[35mStaff Load (0.1ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ? AND "staffs"."id" = ? LIMIT 1  [["user_id", 1], ["id", 4]]
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT "customers".* FROM "customers"  WHERE "customers"."staff_id" = ?[0m  [["staff_id", 4]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "users" SET "money" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["money", 58238], ["updated_at", "2014-10-12 07:08:43.232832"]]
+  [1m[35m (135.0ms)[0m  commit transaction
+  [1m[36mStaff Load (0.2ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "staffs" SET "performance" = ?, "updated_at" = ? WHERE "staffs"."id" = 2[0m  [["performance", 4], ["updated_at", "2014-10-12 07:08:43.371889"]]
+  [1m[35m (95.9ms)[0m  commit transaction
+  [1m[36mStaff Load (0.2ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "staffs" SET "performance" = ?, "updated_at" = ? WHERE "staffs"."id" = 4[0m  [["performance", 5], ["updated_at", "2014-10-12 07:08:43.471960"]]
+  [1m[35m (97.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "days" ("average_productivity", "average_staff_happiness", "created_at", "day_number", "expenses", "income", "money", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["average_productivity", 4], ["average_staff_happiness", 70], ["created_at", "2014-10-12 07:08:43.572222"], ["day_number", 68], ["expenses", 1473], ["income", 3000], ["money", 58238], ["updated_at", "2014-10-12 07:08:43.572222"], ["user_id", 1]]
+  [1m[36m (109.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 457ms (ActiveRecord: 439.8ms)
+
+
+Started POST "/create_day" for 127.0.0.1 at 2014-10-12 08:08:43 +0100
+Processing by DaysController#create as HTML
+  Parameters: {"authenticity_token"=>"DO6hEi7NrcIIwP6cbmoObhuJPCvO4rbXj8fe1pTca6Q="}
+  [1m[35mDay Load (0.5ms)[0m  SELECT  "days".* FROM "days"   ORDER BY "days"."id" DESC LIMIT 1
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "days".* FROM "days"   ORDER BY "days"."id" DESC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mStaff Load (0.2ms)[0m  [1mSELECT "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mStaff Load (0.1ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ? AND "staffs"."id" = ? LIMIT 1  [["user_id", 1], ["id", 2]]
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT "customers".* FROM "customers"  WHERE "customers"."staff_id" = ?[0m  [["staff_id", 2]]
+  [1m[35mStaff Load (0.2ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ? AND "staffs"."id" = ? LIMIT 1  [["user_id", 1], ["id", 4]]
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT "customers".* FROM "customers"  WHERE "customers"."staff_id" = ?[0m  [["staff_id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "money" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["money", 59850], ["updated_at", "2014-10-12 07:08:43.702992"]]
+  [1m[35m (135.2ms)[0m  commit transaction
+  [1m[36mStaff Load (0.2ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "staffs" SET "performance" = ?, "updated_at" = ? WHERE "staffs"."id" = 2[0m  [["performance", 7], ["updated_at", "2014-10-12 07:08:43.841927"]]
+  [1m[35m (130.0ms)[0m  commit transaction
+  [1m[36mStaff Load (0.1ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "staffs" SET "performance" = ?, "updated_at" = ? WHERE "staffs"."id" = 4[0m  [["performance", 7], ["updated_at", "2014-10-12 07:08:43.974423"]]
+  [1m[35m (154.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "days" ("average_productivity", "average_staff_happiness", "created_at", "day_number", "expenses", "income", "money", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["average_productivity", 7], ["average_staff_happiness", 70], ["created_at", "2014-10-12 07:08:44.131479"], ["day_number", 69], ["expenses", 1398], ["income", 3000], ["money", 59850], ["updated_at", "2014-10-12 07:08:44.131479"], ["user_id", 1]]
+  [1m[36m (130.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 576ms (ActiveRecord: 553.7ms)
+
+
+Started POST "/create_day" for 127.0.0.1 at 2014-10-12 08:08:44 +0100
+Processing by DaysController#create as HTML
+  Parameters: {"authenticity_token"=>"DO6hEi7NrcIIwP6cbmoObhuJPCvO4rbXj8fe1pTca6Q="}
+  [1m[35mDay Load (0.2ms)[0m  SELECT  "days".* FROM "days"   ORDER BY "days"."id" DESC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "days".* FROM "days"   ORDER BY "days"."id" DESC LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mStaff Load (0.1ms)[0m  [1mSELECT "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mStaff Load (0.0ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ? AND "staffs"."id" = ? LIMIT 1  [["user_id", 1], ["id", 2]]
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT "customers".* FROM "customers"  WHERE "customers"."staff_id" = ?[0m  [["staff_id", 2]]
+  [1m[35mStaff Load (0.0ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ? AND "staffs"."id" = ? LIMIT 1  [["user_id", 1], ["id", 4]]
+  [1m[36mCustomer Load (0.2ms)[0m  [1mSELECT "customers".* FROM "customers"  WHERE "customers"."staff_id" = ?[0m  [["staff_id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "money" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["money", 61527], ["updated_at", "2014-10-12 07:08:44.322322"]]
+  [1m[35m (107.0ms)[0m  commit transaction
+  [1m[36mStaff Load (0.1ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "staffs" SET "performance" = ?, "updated_at" = ? WHERE "staffs"."id" = 2[0m  [["performance", 8], ["updated_at", "2014-10-12 07:08:44.432971"]]
+  [1m[35m (132.1ms)[0m  commit transaction
+  [1m[36mStaff Load (0.1ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "days" ("average_productivity", "average_staff_happiness", "created_at", "day_number", "expenses", "income", "money", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["average_productivity", 7], ["average_staff_happiness", 70], ["created_at", "2014-10-12 07:08:44.568188"], ["day_number", 70], ["expenses", 1456], ["income", 3000], ["money", 61527], ["updated_at", "2014-10-12 07:08:44.568188"], ["user_id", 1]]
+  [1m[35m (131.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 432ms (ActiveRecord: 372.2ms)
+
+
+Started POST "/create_day" for 127.0.0.1 at 2014-10-12 08:08:44 +0100
+Processing by DaysController#create as HTML
+  Parameters: {"authenticity_token"=>"DO6hEi7NrcIIwP6cbmoObhuJPCvO4rbXj8fe1pTca6Q="}
+  [1m[36mDay Load (0.3ms)[0m  [1mSELECT  "days".* FROM "days"   ORDER BY "days"."id" DESC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "days".* FROM "days"   ORDER BY "days"."id" DESC LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mStaff Load (0.1ms)[0m  SELECT "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ?  [["user_id", 1]]
+  [1m[36mStaff Load (0.1ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ? AND "staffs"."id" = ? LIMIT 1[0m  [["user_id", 1], ["id", 2]]
+  [1m[35mCustomer Load (0.1ms)[0m  SELECT "customers".* FROM "customers"  WHERE "customers"."staff_id" = ?  [["staff_id", 2]]
+  [1m[36mStaff Load (0.1ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ? AND "staffs"."id" = ? LIMIT 1[0m  [["user_id", 1], ["id", 4]]
+  [1m[35mCustomer Load (0.1ms)[0m  SELECT "customers".* FROM "customers"  WHERE "customers"."staff_id" = ?  [["staff_id", 4]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "money" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["money", 63146], ["updated_at", "2014-10-12 07:08:44.716407"]]
+  [1m[36m (118.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mStaff Load (0.2ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "staffs" SET "performance" = ?, "updated_at" = ? WHERE "staffs"."id" = 2  [["performance", 6], ["updated_at", "2014-10-12 07:08:44.838503"]]
+  [1m[36m (96.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mStaff Load (0.1ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "staffs" SET "performance" = ?, "updated_at" = ? WHERE "staffs"."id" = 4  [["performance", 5], ["updated_at", "2014-10-12 07:08:44.937790"]]
+  [1m[36m (110.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "days" ("average_productivity", "average_staff_happiness", "created_at", "day_number", "expenses", "income", "money", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["average_productivity", 5], ["average_staff_happiness", 70], ["created_at", "2014-10-12 07:08:45.050511"], ["day_number", 71], ["expenses", 1457], ["income", 3000], ["money", 63146], ["updated_at", "2014-10-12 07:08:45.050511"], ["user_id", 1]]
+  [1m[35m (119.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 464ms (ActiveRecord: 446.4ms)
+
+
+Started POST "/create_day" for 127.0.0.1 at 2014-10-12 08:08:45 +0100
+Processing by DaysController#create as HTML
+  Parameters: {"authenticity_token"=>"DO6hEi7NrcIIwP6cbmoObhuJPCvO4rbXj8fe1pTca6Q="}
+  [1m[36mDay Load (0.2ms)[0m  [1mSELECT  "days".* FROM "days"   ORDER BY "days"."id" DESC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "days".* FROM "days"   ORDER BY "days"."id" DESC LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mStaff Load (0.1ms)[0m  SELECT "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ?  [["user_id", 1]]
+  [1m[36mStaff Load (0.1ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ? AND "staffs"."id" = ? LIMIT 1[0m  [["user_id", 1], ["id", 2]]
+  [1m[35mCustomer Load (0.1ms)[0m  SELECT "customers".* FROM "customers"  WHERE "customers"."staff_id" = ?  [["staff_id", 2]]
+  [1m[36mStaff Load (0.1ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ? AND "staffs"."id" = ? LIMIT 1[0m  [["user_id", 1], ["id", 4]]
+  [1m[35mCustomer Load (0.1ms)[0m  SELECT "customers".* FROM "customers"  WHERE "customers"."staff_id" = ?  [["staff_id", 4]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "users" SET "money" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["money", 64801], ["updated_at", "2014-10-12 07:08:45.188009"]]
+  [1m[36m (150.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mStaff Load (0.1ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "staffs" SET "performance" = ?, "updated_at" = ? WHERE "staffs"."id" = 2  [["performance", 5], ["updated_at", "2014-10-12 07:08:45.340725"]]
+  [1m[36m (120.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mStaff Load (0.2ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "staffs" SET "performance" = ?, "updated_at" = ? WHERE "staffs"."id" = 4  [["performance", 9], ["updated_at", "2014-10-12 07:08:45.464582"]]
+  [1m[36m (119.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "days" ("average_productivity", "average_staff_happiness", "created_at", "day_number", "expenses", "income", "money", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["average_productivity", 7], ["average_staff_happiness", 70], ["created_at", "2014-10-12 07:08:45.586995"], ["day_number", 72], ["expenses", 1487], ["income", 3000], ["money", 64801], ["updated_at", "2014-10-12 07:08:45.586995"], ["user_id", 1]]
+  [1m[35m (168.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 578ms (ActiveRecord: 560.8ms)
+
+
+Started POST "/create_day" for 127.0.0.1 at 2014-10-12 08:08:45 +0100
+Processing by DaysController#create as HTML
+  Parameters: {"authenticity_token"=>"DO6hEi7NrcIIwP6cbmoObhuJPCvO4rbXj8fe1pTca6Q="}
+  [1m[36mDay Load (0.1ms)[0m  [1mSELECT  "days".* FROM "days"   ORDER BY "days"."id" DESC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "days".* FROM "days"   ORDER BY "days"."id" DESC LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mStaff Load (0.1ms)[0m  SELECT "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ?  [["user_id", 1]]
+  [1m[36mStaff Load (0.0ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ? AND "staffs"."id" = ? LIMIT 1[0m  [["user_id", 1], ["id", 2]]
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT "customers".* FROM "customers"  WHERE "customers"."staff_id" = ?  [["staff_id", 2]]
+  [1m[36mStaff Load (0.0ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ? AND "staffs"."id" = ? LIMIT 1[0m  [["user_id", 1], ["id", 4]]
+  [1m[35mCustomer Load (0.1ms)[0m  SELECT "customers".* FROM "customers"  WHERE "customers"."staff_id" = ?  [["staff_id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "users" SET "money" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["money", 66397], ["updated_at", "2014-10-12 07:08:45.772112"]]
+  [1m[36m (135.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mStaff Load (0.2ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "staffs" SET "performance" = ?, "updated_at" = ? WHERE "staffs"."id" = 2  [["performance", 4], ["updated_at", "2014-10-12 07:08:45.910875"]]
+  [1m[36m (118.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mStaff Load (0.2ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "staffs" SET "performance" = ?, "updated_at" = ? WHERE "staffs"."id" = 4  [["performance", 5], ["updated_at", "2014-10-12 07:08:46.033433"]]
+  [1m[36m (99.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "days" ("average_productivity", "average_staff_happiness", "created_at", "day_number", "expenses", "income", "money", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["average_productivity", 4], ["average_staff_happiness", 70], ["created_at", "2014-10-12 07:08:46.136317"], ["day_number", 73], ["expenses", 1497], ["income", 3000], ["money", 66397], ["updated_at", "2014-10-12 07:08:46.136317"], ["user_id", 1]]
+  [1m[35m (119.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 492ms (ActiveRecord: 475.8ms)
+
+
+Started POST "/create_day" for 127.0.0.1 at 2014-10-12 08:08:46 +0100
+Processing by DaysController#create as HTML
+  Parameters: {"authenticity_token"=>"DO6hEi7NrcIIwP6cbmoObhuJPCvO4rbXj8fe1pTca6Q="}
+  [1m[36mDay Load (0.3ms)[0m  [1mSELECT  "days".* FROM "days"   ORDER BY "days"."id" DESC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "days".* FROM "days"   ORDER BY "days"."id" DESC LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mStaff Load (0.1ms)[0m  SELECT "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ?  [["user_id", 1]]
+  [1m[36mStaff Load (0.1ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ? AND "staffs"."id" = ? LIMIT 1[0m  [["user_id", 1], ["id", 2]]
+  [1m[35mCustomer Load (0.1ms)[0m  SELECT "customers".* FROM "customers"  WHERE "customers"."staff_id" = ?  [["staff_id", 2]]
+  [1m[36mStaff Load (0.1ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ? AND "staffs"."id" = ? LIMIT 1[0m  [["user_id", 1], ["id", 4]]
+  [1m[35mCustomer Load (0.1ms)[0m  SELECT "customers".* FROM "customers"  WHERE "customers"."staff_id" = ?  [["staff_id", 4]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "users" SET "money" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["money", 68057], ["updated_at", "2014-10-12 07:08:46.276023"]]
+  [1m[36m (136.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mStaff Load (0.2ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36mStaff Load (0.1ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "staffs" SET "performance" = ?, "updated_at" = ? WHERE "staffs"."id" = 4[0m  [["performance", 8], ["updated_at", "2014-10-12 07:08:46.417877"]]
+  [1m[35m (129.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "days" ("average_productivity", "average_staff_happiness", "created_at", "day_number", "expenses", "income", "money", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["average_productivity", 6], ["average_staff_happiness", 70], ["created_at", "2014-10-12 07:08:46.550120"], ["day_number", 74], ["expenses", 1250], ["income", 3000], ["money", 68057], ["updated_at", "2014-10-12 07:08:46.550120"], ["user_id", 1]]
+  [1m[36m (130.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 416ms (ActiveRecord: 398.6ms)
+
+
+Started POST "/create_day" for 127.0.0.1 at 2014-10-12 08:08:46 +0100
+Processing by DaysController#create as HTML
+  Parameters: {"authenticity_token"=>"DO6hEi7NrcIIwP6cbmoObhuJPCvO4rbXj8fe1pTca6Q="}
+  [1m[35mDay Load (0.2ms)[0m  SELECT  "days".* FROM "days"   ORDER BY "days"."id" DESC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "days".* FROM "days"   ORDER BY "days"."id" DESC LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mStaff Load (0.1ms)[0m  [1mSELECT "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mStaff Load (0.1ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ? AND "staffs"."id" = ? LIMIT 1  [["user_id", 1], ["id", 2]]
+  [1m[36mCustomer Load (0.0ms)[0m  [1mSELECT "customers".* FROM "customers"  WHERE "customers"."staff_id" = ?[0m  [["staff_id", 2]]
+  [1m[35mStaff Load (0.1ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ? AND "staffs"."id" = ? LIMIT 1  [["user_id", 1], ["id", 4]]
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT "customers".* FROM "customers"  WHERE "customers"."staff_id" = ?[0m  [["staff_id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "money" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["money", 69645], ["updated_at", "2014-10-12 07:08:46.693555"]]
+  [1m[35m (155.8ms)[0m  commit transaction
+  [1m[36mStaff Load (0.1ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "staffs" SET "performance" = ?, "updated_at" = ? WHERE "staffs"."id" = 2[0m  [["performance", 6], ["updated_at", "2014-10-12 07:08:46.851606"]]
+  [1m[35m (143.4ms)[0m  commit transaction
+  [1m[36mStaff Load (0.2ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "staffs" SET "performance" = ?, "updated_at" = ? WHERE "staffs"."id" = 4[0m  [["performance", 5], ["updated_at", "2014-10-12 07:08:46.997918"]]
+  [1m[35m (140.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "days" ("average_productivity", "average_staff_happiness", "created_at", "day_number", "expenses", "income", "money", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["average_productivity", 5], ["average_staff_happiness", 70], ["created_at", "2014-10-12 07:08:47.141621"], ["day_number", 75], ["expenses", 1357], ["income", 3000], ["money", 69645], ["updated_at", "2014-10-12 07:08:47.141621"], ["user_id", 1]]
+  [1m[36m (153.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 611ms (ActiveRecord: 594.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-12 08:08:47 +0100
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+Processing by LoggedInController#user_log_in as HTML
+  [1m[36mStaff Load (0.2ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ? LIMIT 5 OFFSET 0[0m  [["user_id", 1]]
+  [1m[35mCustomer Load (0.2ms)[0m  SELECT  "customers".* FROM "customers" INNER JOIN "staffs" ON "customers"."staff_id" = "staffs"."id" WHERE "staffs"."user_id" = ? LIMIT 5 OFFSET 0  [["user_id", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered logged_in/user_log_in.html.erb within layouts/application (7.4ms)
+  Rendered layouts/_navigation.html.erb (0.3ms)
+  Rendered layouts/_left_pane.html.erb (0.0ms)
+  Rendered layouts/_right_pane.html.erb (0.0ms)
+Completed 200 OK in 170ms (Views: 167.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/combine_all.css?body=1" for 127.0.0.1 at 2014-10-12 08:08:47 +0100
+
+
+Started GET "/assets/customers.css?body=1" for 127.0.0.1 at 2014-10-12 08:08:47 +0100
+
+
+Started GET "/assets/days.css?body=1" for 127.0.0.1 at 2014-10-12 08:08:47 +0100
+
+
+Started GET "/assets/events_decisions/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-10-12 08:08:47 +0100
+
+
+Started GET "/assets/devise_forms.css?body=1" for 127.0.0.1 at 2014-10-12 08:08:47 +0100
+
+
+Started GET "/assets/events_decisions/maincss.css?body=1" for 127.0.0.1 at 2014-10-12 08:08:47 +0100
+
+
+Started GET "/assets/maincss.css?body=1" for 127.0.0.1 at 2014-10-12 08:08:47 +0100
+
+
+Started GET "/assets/registrations.css?body=1" for 127.0.0.1 at 2014-10-12 08:08:47 +0100
+
+
+Started GET "/assets/staffs.css?body=1" for 127.0.0.1 at 2014-10-12 08:08:47 +0100
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2014-10-12 08:08:47 +0100
+
+
+Started GET "/assets/user_logged.css?body=1" for 127.0.0.1 at 2014-10-12 08:08:47 +0100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-12 08:08:47 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-12 08:08:47 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-12 08:08:47 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-12 08:08:47 +0100
+
+
+Started GET "/assets/canvasjs.min.js?body=1" for 127.0.0.1 at 2014-10-12 08:08:47 +0100
+
+
+Started GET "/assets/chart_functions.js?body=1" for 127.0.0.1 at 2014-10-12 08:08:47 +0100
+
+
+Started GET "/assets/customers.js?body=1" for 127.0.0.1 at 2014-10-12 08:08:47 +0100
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2014-10-12 08:08:47 +0100
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2014-10-12 08:08:47 +0100
+
+
+Started GET "/assets/days.js?body=1" for 127.0.0.1 at 2014-10-12 08:08:47 +0100
+
+
+Started GET "/assets/jquery.easytabs.min.js?body=1" for 127.0.0.1 at 2014-10-12 08:08:47 +0100
+
+
+Started GET "/assets/logged_in.js?body=1" for 127.0.0.1 at 2014-10-12 08:08:47 +0100
+
+
+Started GET "/assets/mainscript.js?body=1" for 127.0.0.1 at 2014-10-12 08:08:47 +0100
+
+
+Started GET "/assets/pagination.js?body=1" for 127.0.0.1 at 2014-10-12 08:08:47 +0100
+
+
+Started GET "/assets/registrations.js?body=1" for 127.0.0.1 at 2014-10-12 08:08:47 +0100
+
+
+Started GET "/assets/staffs.js?body=1" for 127.0.0.1 at 2014-10-12 08:08:47 +0100
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2014-10-12 08:08:47 +0100
+
+
+Started GET "/assets/traits.js?body=1" for 127.0.0.1 at 2014-10-12 08:08:47 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-12 08:08:47 +0100
+
+
+Started GET "/days" for 127.0.0.1 at 2014-10-12 08:08:48 +0100
+Processing by DaysController#index as */*
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mDay Load (0.3ms)[0m  [1mSELECT "days".* FROM "days"  WHERE "days"."user_id" = ?[0m  [["user_id", 1]]
+Completed 200 OK in 60ms (Views: 57.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/days" for 127.0.0.1 at 2014-10-12 08:08:50 +0100
+Processing by DaysController#index as */*
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mDay Load (0.5ms)[0m  [1mSELECT "days".* FROM "days"  WHERE "days"."user_id" = ?[0m  [["user_id", 1]]
+Completed 200 OK in 23ms (Views: 20.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/customers" for 127.0.0.1 at 2014-10-12 08:08:52 +0100
+Processing by CustomersController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mCustomer Load (0.3ms)[0m  [1mSELECT "customers".* FROM "customers" INNER JOIN "staffs" ON "customers"."staff_id" = "staffs"."id" WHERE "staffs"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mStaff Load (0.1ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered customers/index.html.erb within layouts/application (4.9ms)
+  Rendered layouts/_navigation.html.erb (0.3ms)
+  Rendered layouts/_left_pane.html.erb (0.0ms)
+  Rendered layouts/_right_pane.html.erb (0.0ms)
+Completed 200 OK in 170ms (Views: 165.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/customers/3" for 127.0.0.1 at 2014-10-12 08:08:53 +0100
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mCustomer Load (0.1ms)[0m  SELECT  "customers".* FROM "customers" INNER JOIN "staffs" ON "customers"."staff_id" = "staffs"."id" WHERE "staffs"."user_id" = ? AND "customers"."id" = ? LIMIT 1  [["user_id", 1], ["id", 3]]
+  [1m[36mStaff Load (0.1ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered customers/show.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_navigation.html.erb (0.4ms)
+  Rendered layouts/_left_pane.html.erb (0.0ms)
+  Rendered layouts/_right_pane.html.erb (0.0ms)
+Completed 200 OK in 164ms (Views: 159.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/staffs/4" for 127.0.0.1 at 2014-10-12 08:08:54 +0100
+Processing by StaffsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mStaff Load (0.2ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ? AND "staffs"."id" = ? LIMIT 1[0m  [["user_id", 1], ["id", 4]]
+  [1m[35mCustomer Load (0.1ms)[0m  SELECT "customers".* FROM "customers"  WHERE "customers"."staff_id" = ?  [["staff_id", 4]]
+  Rendered staffs/show.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_navigation.html.erb (0.3ms)
+  Rendered layouts/_left_pane.html.erb (0.0ms)
+  Rendered layouts/_right_pane.html.erb (0.0ms)
+Completed 200 OK in 163ms (Views: 158.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-12 08:08:56 +0100
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+Processing by LoggedInController#user_log_in as HTML
+  [1m[35mStaff Load (0.1ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ? LIMIT 5 OFFSET 0  [["user_id", 1]]
+  [1m[36mCustomer Load (0.1ms)[0m  [1mSELECT  "customers".* FROM "customers" INNER JOIN "staffs" ON "customers"."staff_id" = "staffs"."id" WHERE "staffs"."user_id" = ? LIMIT 5 OFFSET 0[0m  [["user_id", 1]]
+  [1m[35mStaff Load (0.1ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered logged_in/user_log_in.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_navigation.html.erb (0.3ms)
+  Rendered layouts/_left_pane.html.erb (0.0ms)
+  Rendered layouts/_right_pane.html.erb (0.0ms)
+Completed 200 OK in 171ms (Views: 169.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/create_day" for 127.0.0.1 at 2014-10-12 08:10:59 +0100
+Processing by DaysController#create as HTML
+  Parameters: {"authenticity_token"=>"DO6hEi7NrcIIwP6cbmoObhuJPCvO4rbXj8fe1pTca6Q="}
+  [1m[36mDay Load (0.1ms)[0m  [1mSELECT  "days".* FROM "days"   ORDER BY "days"."id" DESC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "days".* FROM "days"   ORDER BY "days"."id" DESC LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mStaff Load (0.1ms)[0m  SELECT "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ?  [["user_id", 1]]
+  [1m[36mStaff Load (0.1ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ? AND "staffs"."id" = ? LIMIT 1[0m  [["user_id", 1], ["id", 2]]
+  [1m[35mCustomer Load (0.0ms)[0m  SELECT "customers".* FROM "customers"  WHERE "customers"."staff_id" = ?  [["staff_id", 2]]
+  [1m[36mStaff Load (0.0ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ? AND "staffs"."id" = ? LIMIT 1[0m  [["user_id", 1], ["id", 4]]
+  [1m[35mCustomer Load (0.1ms)[0m  SELECT "customers".* FROM "customers"  WHERE "customers"."staff_id" = ?  [["staff_id", 4]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "users" SET "money" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["money", 71404], ["updated_at", "2014-10-12 07:10:59.426182"]]
+  [1m[36m (138.2ms)[0m  [1mcommit transaction[0m
+  [1m[35mStaff Load (0.1ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "staffs" SET "performance" = ?, "updated_at" = ? WHERE "staffs"."id" = 2  [["performance", 8], ["updated_at", "2014-10-12 07:10:59.566536"]]
+  [1m[36m (98.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mStaff Load (0.1ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "days" ("average_productivity", "average_staff_happiness", "created_at", "day_number", "expenses", "income", "money", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["average_productivity", 6], ["average_staff_happiness", 70], ["created_at", "2014-10-12 07:10:59.667896"], ["day_number", 76], ["expenses", 1412], ["income", 3000], ["money", 71404], ["updated_at", "2014-10-12 07:10:59.667896"], ["user_id", 1]]
+  [1m[36m (153.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 402ms (ActiveRecord: 391.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-12 08:10:59 +0100
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+Processing by LoggedInController#user_log_in as HTML
+  [1m[36mStaff Load (0.1ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."user_id" = ? LIMIT 5 OFFSET 0[0m  [["user_id", 1]]
+  [1m[35mCustomer Load (0.1ms)[0m  SELECT  "customers".* FROM "customers" INNER JOIN "staffs" ON "customers"."staff_id" = "staffs"."id" WHERE "staffs"."user_id" = ? LIMIT 5 OFFSET 0  [["user_id", 1]]
+  [1m[36mStaff Load (0.0ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "staffs".* FROM "staffs"  WHERE "staffs"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered logged_in/user_log_in.html.erb within layouts/application (4.0ms)
+  Rendered layouts/_navigation.html.erb (0.4ms)
+  Rendered layouts/_left_pane.html.erb (0.0ms)
+  Rendered layouts/_right_pane.html.erb (0.0ms)
+Completed 200 OK in 174ms (Views: 172.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/combine_all.css?body=1" for 127.0.0.1 at 2014-10-12 08:11:00 +0100
+
+
+Started GET "/assets/days.css?body=1" for 127.0.0.1 at 2014-10-12 08:11:00 +0100
+
+
+Started GET "/assets/devise_forms.css?body=1" for 127.0.0.1 at 2014-10-12 08:11:00 +0100
+
+
+Started GET "/assets/customers.css?body=1" for 127.0.0.1 at 2014-10-12 08:11:00 +0100
+
+
+Started GET "/assets/events_decisions/maincss.css?body=1" for 127.0.0.1 at 2014-10-12 08:11:00 +0100
+
+
+Started GET "/assets/events_decisions/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-10-12 08:11:00 +0100
+
+
+Started GET "/assets/maincss.css?body=1" for 127.0.0.1 at 2014-10-12 08:11:00 +0100
+
+
+Started GET "/assets/registrations.css?body=1" for 127.0.0.1 at 2014-10-12 08:11:00 +0100
+
+
+Started GET "/assets/staffs.css?body=1" for 127.0.0.1 at 2014-10-12 08:11:00 +0100
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2014-10-12 08:11:00 +0100
+
+
+Started GET "/assets/user_logged.css?body=1" for 127.0.0.1 at 2014-10-12 08:11:00 +0100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-12 08:11:00 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-12 08:11:00 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-12 08:11:00 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-12 08:11:00 +0100
+
+
+Started GET "/assets/chart_functions.js?body=1" for 127.0.0.1 at 2014-10-12 08:11:00 +0100
+
+
+Started GET "/assets/canvasjs.min.js?body=1" for 127.0.0.1 at 2014-10-12 08:11:00 +0100
+
+
+Started GET "/assets/customers.js?body=1" for 127.0.0.1 at 2014-10-12 08:11:00 +0100
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2014-10-12 08:11:00 +0100
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2014-10-12 08:11:00 +0100
+
+
+Started GET "/assets/days.js?body=1" for 127.0.0.1 at 2014-10-12 08:11:00 +0100
+
+
+Started GET "/assets/jquery.easytabs.min.js?body=1" for 127.0.0.1 at 2014-10-12 08:11:00 +0100
+
+
+Started GET "/assets/logged_in.js?body=1" for 127.0.0.1 at 2014-10-12 08:11:00 +0100
+
+
+Started GET "/assets/mainscript.js?body=1" for 127.0.0.1 at 2014-10-12 08:11:00 +0100
+
+
+Started GET "/assets/pagination.js?body=1" for 127.0.0.1 at 2014-10-12 08:11:00 +0100
+
+
+Started GET "/assets/registrations.js?body=1" for 127.0.0.1 at 2014-10-12 08:11:00 +0100
+
+
+Started GET "/assets/staffs.js?body=1" for 127.0.0.1 at 2014-10-12 08:11:00 +0100
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2014-10-12 08:11:00 +0100
+
+
+Started GET "/assets/traits.js?body=1" for 127.0.0.1 at 2014-10-12 08:11:00 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-12 08:11:00 +0100
+
+
+Started GET "/days" for 127.0.0.1 at 2014-10-12 08:11:00 +0100
+Processing by DaysController#index as */*
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mDay Load (0.8ms)[0m  [1mSELECT "days".* FROM "days"  WHERE "days"."user_id" = ?[0m  [["user_id", 1]]
+Completed 200 OK in 28ms (Views: 22.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/days" for 127.0.0.1 at 2014-10-12 08:11:01 +0100
+Processing by DaysController#index as */*
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mDay Load (0.7ms)[0m  [1mSELECT "days".* FROM "days"  WHERE "days"."user_id" = ?[0m  [["user_id", 1]]
+Completed 200 OK in 19ms (Views: 15.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/days" for 127.0.0.1 at 2014-10-12 08:11:02 +0100
+Processing by DaysController#index as */*
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mDay Load (0.6ms)[0m  [1mSELECT "days".* FROM "days"  WHERE "days"."user_id" = ?[0m  [["user_id", 1]]
+Completed 200 OK in 20ms (Views: 16.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/days" for 127.0.0.1 at 2014-10-12 08:11:03 +0100
+Processing by DaysController#index as */*
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mDay Load (0.5ms)[0m  [1mSELECT "days".* FROM "days"  WHERE "days"."user_id" = ?[0m  [["user_id", 1]]
+Completed 200 OK in 20ms (Views: 16.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/days" for 127.0.0.1 at 2014-10-12 08:11:03 +0100
+Processing by DaysController#index as */*
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mDay Load (0.5ms)[0m  [1mSELECT "days".* FROM "days"  WHERE "days"."user_id" = ?[0m  [["user_id", 1]]
+Completed 200 OK in 24ms (Views: 21.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/days" for 127.0.0.1 at 2014-10-12 08:11:04 +0100
+Processing by DaysController#index as */*
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mDay Load (0.6ms)[0m  [1mSELECT "days".* FROM "days"  WHERE "days"."user_id" = ?[0m  [["user_id", 1]]
+Completed 200 OK in 21ms (Views: 18.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/days" for 127.0.0.1 at 2014-10-12 08:11:04 +0100
+Processing by DaysController#index as */*
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mDay Load (0.3ms)[0m  [1mSELECT "days".* FROM "days"  WHERE "days"."user_id" = ?[0m  [["user_id", 1]]
+Completed 200 OK in 55ms (Views: 53.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/days" for 127.0.0.1 at 2014-10-12 08:11:05 +0100
+Processing by DaysController#index as */*
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mDay Load (1.0ms)[0m  [1mSELECT "days".* FROM "days"  WHERE "days"."user_id" = ?[0m  [["user_id", 1]]
+Completed 200 OK in 28ms (Views: 24.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/days" for 127.0.0.1 at 2014-10-12 08:11:05 +0100
+Processing by DaysController#index as */*
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mDay Load (0.4ms)[0m  [1mSELECT "days".* FROM "days"  WHERE "days"."user_id" = ?[0m  [["user_id", 1]]
+Completed 200 OK in 17ms (Views: 14.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/days" for 127.0.0.1 at 2014-10-12 08:11:06 +0100
+Processing by DaysController#index as */*
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mDay Load (0.4ms)[0m  [1mSELECT "days".* FROM "days"  WHERE "days"."user_id" = ?[0m  [["user_id", 1]]
+Completed 200 OK in 21ms (Views: 19.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/days" for 127.0.0.1 at 2014-10-12 08:11:08 +0100
+Processing by DaysController#index as */*
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mDay Load (0.3ms)[0m  [1mSELECT "days".* FROM "days"  WHERE "days"."user_id" = ?[0m  [["user_id", 1]]
+Completed 200 OK in 16ms (Views: 13.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/days" for 127.0.0.1 at 2014-10-12 08:11:08 +0100
+Processing by DaysController#index as */*
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mDay Load (1.2ms)[0m  [1mSELECT "days".* FROM "days"  WHERE "days"."user_id" = ?[0m  [["user_id", 1]]
+Completed 200 OK in 23ms (Views: 19.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/days" for 127.0.0.1 at 2014-10-12 08:11:08 +0100
+Processing by DaysController#index as */*
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mDay Load (0.6ms)[0m  [1mSELECT "days".* FROM "days"  WHERE "days"."user_id" = ?[0m  [["user_id", 1]]
+Completed 200 OK in 19ms (Views: 16.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/days" for 127.0.0.1 at 2014-10-12 08:11:09 +0100
+Processing by DaysController#index as */*
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mDay Load (0.5ms)[0m  [1mSELECT "days".* FROM "days"  WHERE "days"."user_id" = ?[0m  [["user_id", 1]]
+Completed 200 OK in 22ms (Views: 19.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/days" for 127.0.0.1 at 2014-10-12 08:11:10 +0100
+Processing by DaysController#index as */*
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mDay Load (0.3ms)[0m  [1mSELECT "days".* FROM "days"  WHERE "days"."user_id" = ?[0m  [["user_id", 1]]
+Completed 200 OK in 17ms (Views: 15.4ms | ActiveRecord: 0.4ms)
