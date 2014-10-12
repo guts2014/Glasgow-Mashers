@@ -6,9 +6,10 @@ AFFLUENCE_UPPER = 2000
 
 class CustomerDescriptor < Person
     attr_reader :affluence, :serviced_by
+    attr_reader :id
     attr_writer :serviced_by
 
-    def initialize
+    def initialize id
         # This shouldn't be like that
         traits = initialize_traits
         # Actual code
@@ -16,6 +17,7 @@ class CustomerDescriptor < Person
         @trait = traits[traits.keys.sample]
         @affluence = [*AFFLUENCE_LOWER..AFFLUENCE_UPPER].sample
         @serviced_by = nil
+        @id = id
     end
 
     def leave?
