@@ -21,6 +21,7 @@ class StaffsController < ApplicationController
 	end
 
 	def update
+		
 	end
 
 	def destroy
@@ -33,6 +34,12 @@ class StaffsController < ApplicationController
 		@staffs << page_count
 		render :json => @staffs
 	end
+
+	private 
+	def person_params
+      params.require(:staff).permit(:hainess, :performance, :salary)
+    end
+
 
 
 end
