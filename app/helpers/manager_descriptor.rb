@@ -1,4 +1,4 @@
-require("./person.rb")
+# require("./person.rb")
 
 INITIAL_BASE_INCOME = 3000
 

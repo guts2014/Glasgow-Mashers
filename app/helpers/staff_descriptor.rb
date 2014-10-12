@@ -1,7 +1,7 @@
-require ("./person.rb")
-require ("./customer_descriptor.rb")
-require ("./trait_initializer.rb")
-require ("faker")
+# require ("./person.rb")
+# require ("./customer_descriptor.rb")
+# require ("./trait_initializer.rb")
+# require ("faker")
 
 BASE_PERFORMANCE_LOWER = 5
 BASE_PERFORMANCE_UPPER = 10
@@ -16,7 +16,7 @@ class StaffDescriptor < Person
 
     def initialize id
         # This shouldn't be like that
-        traits = initialize_traits
+        traits = Trait.initialize_traits
         # Actual code
         @name = Faker::Name.last_name
         @trait = traits[traits.keys.sample]

@@ -1,6 +1,6 @@
-require ("./trait.rb")
-
-def initialize_traits
+# require ("./trait.rb")
+module TraitInitializer
+   def initialize_traits
     traits = [
         {name: "Perfectionist", mod: 5, likes: [], hates: ["Sloppy", "Lazy"]},
         {name: "Sloppy", mod: -5, likes: ["Lazy"], hates: ["Perfectionist"]},
@@ -14,4 +14,6 @@ def initialize_traits
         traits_list[tobject.name] = tobject
     end
     traits_list
-end       
+  end     
+end
+

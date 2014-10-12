@@ -1,4 +1,4 @@
-require("./modifier.rb")
+# require("./modifier.rb")
 
 IGNORE_OPTION_TEXT = "OK"
 TYPE_EQ = "="

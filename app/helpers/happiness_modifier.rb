@@ -1,4 +1,4 @@
-require("./modifier.rb");
+# require("./modifier.rb");
 
 class HappinessModifier < Modifier
 

@@ -1,12 +1,14 @@
 class DaysController < ApplicationController
 	
 	def create
-		last_day_nubmer = Day.last.day_number
+		if Day.last.nil?
+			last_day_nubmer = 0
+		else
+			last_day_nubmer = Day.last.day_number
+		end 
+
 		user = current_user #ManagerDescriptor
-		manager_descriptor = ManagerDescriptor.new(
-			:email => user.email,
-			:name => ""
-			)
+		manager_descriptor = ManagerDescriptor.new(user.email, user.email)
 
 		# These two are arrays
 		staff_descriptor    = staff_description
@@ -15,7 +17,7 @@ class DaysController < ApplicationController
 		staff_descriptor.each do |staff_member|
 			manager_descriptor.hire staff_member
 
-			customers = current_user.staff.find(staff_member.id).customers
+			customers = current_user.staffs.find(staff_member.id).customers
 
 			customers.each do |cust|
 				staff_member.add_customer( turn_customer_model_to_descriptor(cust) )
@@ -35,7 +37,7 @@ class DaysController < ApplicationController
 
 		staff_descriptor.each do |st|
 			performance = st.evaluate
-			happpiness  = st.happiness
+			happiness  = st.happiness
 			total_happiness += happiness
 
 			this_staff_member = Staff.find(st.id)
@@ -48,50 +50,57 @@ class DaysController < ApplicationController
 
 		@day = Day.new(
 			day_number:           last_day_nubmer + 1,
-			average_happiness:    total_happiness / staff_descriptor.length,
+			average_staff_happiness:    total_happiness / staff_descriptor.length,
 			average_productivity: total_performance / staff_descriptor.length,
 			income:               income,
 			expenses:             expenses,
 			user_id:              user.id
 
 			)
-		@day.save
 
+		if @day.save
+			redirect_to root_path
+		else
+			redirect_to root_path
+
+		end
 	end
 
 
-	private 
-
 	def staff_description
 		staff_descriptor = Array.new
-		traits = initialize_traits
-		user.staffs.each do |t|
+		traits = Trait.initialize_traits
+		current_user.staffs.each do |t|
 			staff_member = StaffDescriptor.new(t.id)
 			staff_member.name        = t.name
 			staff_member.happiness   = t.happiness
 			staff_member.salary      = t.salary
 			staff_member.performance = t.performance
 			# Iteraateee
+
 			traits.each do |tr|
-				staff_member.trait = tr if tr.name == t.trait_id
+
+				staff_member.trait = tr[1] if tr[0] == t.trait_id
 			end
 
 			staff_descriptor << staff_member
-		end
 
+
+
+		end
 		return staff_descriptor
 	end
 
 	def customer_description
 		customer_descriptor = Array.new
-		traits = initialize_traits
+		traits = Trait.initialize_traits
 		user.customers.each do |t|
 			customer_member = CustomerDescriptor.new(t.id)
 			customer_member.name      = t.name
 			customer_member.affluence = t.affluence
 			# iterateee
 			traits.each do |tr|
-				customer_member.trait = tr if tr.name == t.trait
+				customer_member.trait = tr[1] if tr.name[0] == t.trait
 			end
 
 			customer_descriptor << customer_member
@@ -107,26 +116,27 @@ class DaysController < ApplicationController
 		staff_descriptor.happiness   = staff_model.happiness
 		staff_descriptor.salary      = staff_model.salary
 		staff_descriptor.performance = staff_model.performance
-			# Iteraateee
-			traits.each do |tr|
-				staff_descriptor.trait = tr if tr.name == staff_model.trait_id
-			end
+
+		# Iteraateee
+		traits.each do |tr|
+			staff_descriptor.trait = tr if tr.name == staff_model.trait_id
 		end
+
 
 		return staff_descriptor
 	end
 
+
 	def turn_customer_model_to_descriptor(customer_model)
-		traits = initialize_traits
+		traits = Trait.initialize_traits
 
 		customer_descriptor             = CustomerDescriptor.new(customer_model.id)
 		customer_descriptor.name        = customer_model.name
 		customer_descriptor.affluence   = customer_model.affluence
 
-			# Iteraateee
-			traits.each do |tr|
-				customer_descriptor.trait = tr if tr.name == customer_model.trait
-			end
+		# Iteraateee
+		traits.each do |tr|
+			customer_descriptor.trait = tr[1] if tr[0] == customer_model.trait
 		end
 
 		return customer_descriptor

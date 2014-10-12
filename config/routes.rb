@@ -22,4 +22,6 @@ Rails.application.routes.draw do
   match "/customers/:page",    to: 'customers#next_page',     via: [:get]
   #get '/staff/new_staff/' => 'staffs#new_staff', as: :reassign_staff
 
+  match '/create_day', to: 'days#create', via: [:post], as: :create_day
+
 end

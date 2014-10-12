@@ -18,6 +18,7 @@
         <li><%= link_to 'New account', new_user_registration_path unless user_signed_in?%></li>
         <li><%= link_to 'Sign_in', new_user_session_path unless user_signed_in?%></li>
         <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete if user_signed_in?%></li>
+        <li><%= link_to 'New day', create_day_path, :method => :post  %></li>
       </ul>
 
       <div class="nav navbar-nav navbar-left">

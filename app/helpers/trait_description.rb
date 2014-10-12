@@ -1,5 +1,5 @@
 class TraitDescription
-    
+
     attr_reader :name, :modifier
 
     def initialize (name, modifier)
@@ -22,5 +22,7 @@ class TraitDescription
     def hates? (trait)
         @hates[trait].nil? ? false : true; 
     end
+
+    
 
 end
