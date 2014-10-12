@@ -1,5 +1,10 @@
 class DaysController < ApplicationController
-	
+	def index
+		@days = current_user.days.all
+
+		render :json => @days
+	end
+
 	def create
 		if Day.last.nil?
 			last_day_nubmer = 0
@@ -9,6 +14,7 @@ class DaysController < ApplicationController
 
 		user = current_user #ManagerDescriptor
 		manager_descriptor = ManagerDescriptor.new(user.email, user.email)
+		manager_descriptor.money = current_user.money
 
 		# These two are arrays
 		staff_descriptor    = staff_description
@@ -28,6 +34,8 @@ class DaysController < ApplicationController
 
 		# To be added in database
 		money    = manager_descriptor.money
+		current_user.update(money: money)
+
 		expenses = manager_descriptor.expenses
 		income   = manager_descriptor.income
 
@@ -39,6 +47,7 @@ class DaysController < ApplicationController
 			performance = st.evaluate
 			happiness  = st.happiness
 			total_happiness += happiness
+			total_performance += performance
 
 			this_staff_member = Staff.find(st.id)
 			this_staff_member.happiness   = happiness
@@ -54,6 +63,7 @@ class DaysController < ApplicationController
 			average_productivity: total_performance / staff_descriptor.length,
 			income:               income,
 			expenses:             expenses,
+			money:                money,
 			user_id:              user.id
 
 			)
@@ -132,16 +142,16 @@ class DaysController < ApplicationController
 	def turn_customer_model_to_descriptor(customer_model)
 		traits = Trait.initialize_traits
 
-		customer_descriptor             = CustomerDescriptor.new(customer_model.id)
-		customer_descriptor.name        = customer_model.name
-		customer_descriptor.affluence   = customer_model.affluence
+		customer_desc            = CustomerDescriptor.new(customer_model.id)
+		customer_desc.name        = customer_model.name
+		customer_desc.affluence   = customer_model.affluence
 
 		# Iteraateee
 		traits.each do |tr|
-			customer_descriptor.trait = tr[1] if tr[0] == customer_model.trait
+			customer_desc.trait = tr[1] if tr[0] == customer_model.trait
 		end
 
-		return customer_descriptor
+		return customer_desc
 	end
 
 end

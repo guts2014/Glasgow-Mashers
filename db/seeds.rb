@@ -7,6 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
+=begin
 10.times do |t|
   Staff.create(
 	name:        Faker::Name.last_name,
@@ -26,4 +27,5 @@ end
 		staff_id:  rand(10) + 1
 		) 
 end
+=end
 

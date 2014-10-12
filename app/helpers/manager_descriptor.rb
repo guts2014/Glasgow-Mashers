@@ -6,6 +6,7 @@ class ManagerDescriptor < Person
     
     attr_reader :email, :baseIncome, :name, :staff
     attr_writer :name, :baseIncome
+    attr_accessor :money
 
     def initialize email, name
         @email = email
@@ -23,7 +24,7 @@ class ManagerDescriptor < Person
     def expenses
         exp = 0
         @staff.each do |x|
-            exp += x.salary
+            exp += x.salary / 2 + [*0..230].sample
         end
         exp
     end 
