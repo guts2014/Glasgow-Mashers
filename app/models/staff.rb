@@ -1,13 +1,14 @@
 class Staff < ActiveRecord::Base
-	validates :name, presence: true
-	validates :salary, numericality: {only_integer: true}
-	validates :happiness, numericality: {only_integer: true}
-	validates :salary, numericality: {only_integer: true}
-	validates :performance, numericality: {only_integer: true}
-	validates :trait_id, presence: true
-	validate  :happiness_not_negative
-	validate  :salary_not_negative
-	has_many  :customers
+	validates   :name, presence: true
+	validates   :salary, numericality: {only_integer: true}
+	validates   :happiness, numericality: {only_integer: true}
+	validates   :salary, numericality: {only_integer: true}
+	validates   :performance, numericality: {only_integer: true}
+	validates   :trait_id, presence: true
+	validate    :happiness_not_negative
+	validate    :salary_not_negative
+	has_many    :customers
+	belongs_to  :user
 
 	def happiness_not_negative 
 		if happiness.present? && happiness < 1

@@ -3,6 +3,7 @@ class Customer < ActiveRecord::Base
 	validates :trait, presence: true
 	validate  :affluence_not_negative
 	belongs_to :staff
+	
 
 
 	def affluence_not_negative

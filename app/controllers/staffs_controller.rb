@@ -1,14 +1,14 @@
 class StaffsController < ApplicationController
 	def index
-		@staff = Staff.all
+		@staff = current_user.staffs.all
 	end
 
 	def show
-		@staff = Staff.find(params[:id])
+		@staff = current_user.staffs.find(params[:id])
 	end
 
 	def new_staff
-		@customers = Staff.all
+		@customers = current_user.staffs.all
 	end
 
 	def new
@@ -28,8 +28,8 @@ class StaffsController < ApplicationController
 
 	def next_page
 		page_num = params[:page].to_i
-		@staffs = Staff.pagination(page_num, 5)
-		page_count = Staff.count / 5;
+		@staffs = current_user.staffs.pagination(page_num, 5)
+		page_count = current_user.staffs.count / 5;
 		@staffs << page_count
 		render :json => @staffs
 	end

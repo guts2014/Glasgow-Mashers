@@ -1,6 +1,6 @@
 class LoggedInController < ApplicationController
 	def user_log_in
-		@staffs = Staff.pagination(0,5)
-		@customers = Customer.pagination(0,5)
+		@staffs = current_user.staffs.pagination(0,5)
+		@customers = current_user.customers.pagination(0,5)
 	end
 end

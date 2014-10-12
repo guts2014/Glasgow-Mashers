@@ -11,15 +11,11 @@
 	<%= render 'layouts/navigation.html.erb' %>
 	<div class="margin-top"></div>
 	<div class="row">
-		<div class="col-md-2 left-panel">
-			
-		</div>
-
-		<%= yield %>
 		
-		<div class="col-md-2 right-panel">
-
-		</div>
+		<%= render 'layouts/left_pane.html.erb' %>
+		<%= yield %>
+		<%= render 'layouts/right_pane.html.erb' %>
+		
 	</div>
 
 

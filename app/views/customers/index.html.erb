@@ -12,14 +12,16 @@
 
 		<div id="staff-member-display">
 			<% @customers.each do |t| %>
-
+			<%= link_to customer_path(t) do%>
 			<div class="col-md-2 staff-styling">
+
 				<div class="well">
 					Name: <%= t.name %> <br>
 					Affluence: <%= t.affluence %> <br>
 					Assigned: <%= t.staff.name %> <br>
 				</div>
 			</div>
+			<% end %>
 			<% end %>
 		</div>
 	</div>

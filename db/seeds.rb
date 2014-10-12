@@ -13,7 +13,8 @@
 	happiness:   Faker::Number.number(2),
     salary:      Faker::Number.number(5),
     performance: Faker::Number.number(2),
-    trait_id:    Faker::Lorem.word
+    trait_id:    Faker::Lorem.word,
+    user_id:     1
 	)
 end
 

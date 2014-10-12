@@ -14,13 +14,14 @@
 			<% @staff.each do |t| %>
 
 			<div class="col-md-2 staff-styling">
+				<%= link_to staff_path(t) do %>
 				<div class="well">
 					Name: <%= t.name %> <br>
 					Happiness: <%= t.happiness %> <br>
 					Salary: <%= t.salary %> <br>
 					Performance: <%= t.performance %> <br>
-
 				</div>
+				<% end %>
 
 			</div>
 			<% end %>

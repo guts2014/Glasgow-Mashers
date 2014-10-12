@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   resources :staffs
   resources :customers
+  resources :days
 
   authenticated :user do 
     root 'logged_in#user_log_in', as: :authenticated_root, via: :get

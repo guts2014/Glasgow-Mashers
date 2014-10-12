@@ -90,7 +90,7 @@ function paginationFunctionCustomers(){
 		page_number += 1;
 		
 		$.get('/customers/' + page_number, function(data, status){
-			//console.log(data)
+			
 			if(page_number >= data["page_count"]){
 				return;
 			}
@@ -102,7 +102,7 @@ function paginationFunctionCustomers(){
 
 
 				for (i = 0; i < data["customers"].length -1; i++) {
-					console.log(data["customers"][i])
+					
 					add_elements_to_canvas += parse_helper_customer(data["customers"][i].name, 
 						data["customers"][i].affluence, data["customer_names"][i]);
 
